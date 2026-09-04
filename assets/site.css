@@ -115,16 +115,16 @@ section{padding:5rem 0}
 /* Spinning globe mark: plate PNG (with a punched hole) over a sphere made from the
    app's equirectangular map. Globe centre/radius measured off the artwork, same
    fractions the Flutter widget uses: cx 50.88% w, cy 76.23% h, r 18.9% w. */
-.globe-mark{position:relative;width:min(340px,72vw);aspect-ratio:1024/1244;margin:0 auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.4))}
+.globe-mark{position:relative;width:min(340px,72vw);aspect-ratio:910/1224;margin:0 auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.4))}
 .globe-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1}
 /* Globe sits IN FRONT of the plate (as in the brand artwork) and ~4% larger than the
    hole, so the plate ring tangent to the hole is covered — no double edge. */
 /* Front rim of the plate, layered over the sphere's base so it sits IN the well. */
-.globe-mark img.plate-front{display:none} /* new dish art has cut-out rings; sphere rests ON the plate instead */
+.globe-mark img.plate-front{z-index:3;clip-path:inset(87.5% 0 0 0);pointer-events:none}
 /* Contact shadow on the plate, under the sphere. */
-.globe-shadow{position:absolute;left:31%;top:83.4%;width:37%;height:4.6%;border-radius:50%;z-index:1;
+.globe-shadow{position:absolute;left:29%;top:84.6%;width:42%;height:6.5%;border-radius:50%;z-index:1;
   background:radial-gradient(closest-side,rgba(40,20,0,.42),rgba(40,20,0,.16) 62%,transparent 100%);filter:blur(5px)}
-.globe{position:absolute;left:34.77%;top:61.25%;width:29.3%;aspect-ratio:1;border-radius:50%;overflow:hidden;z-index:2;
+.globe{position:absolute;left:30.3%;top:61.6%;width:39.4%;aspect-ratio:1;border-radius:50%;overflow:hidden;z-index:2;
   background:url("https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_map_v1.png") 0 0/200% 100% repeat-x;
   animation:globe-spin 14s linear infinite}
 .globe::after{content:"";position:absolute;inset:0;border-radius:50%;
