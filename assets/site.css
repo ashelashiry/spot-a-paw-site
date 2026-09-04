@@ -120,11 +120,11 @@ section{padding:5rem 0}
 /* Globe sits IN FRONT of the plate (as in the brand artwork) and ~4% larger than the
    hole, so the plate ring tangent to the hole is covered — no double edge. */
 /* Front rim of the plate, layered over the sphere's base so it sits IN the well. */
-.globe-mark img.plate-front{z-index:3;clip-path:inset(85.4% 0 0 0);pointer-events:none}
+.globe-mark img.plate-front{display:none} /* new dish art has cut-out rings; sphere rests ON the plate instead */
 /* Contact shadow on the plate, under the sphere. */
-.globe-shadow{position:absolute;left:29.4%;top:82.9%;width:40%;height:5.6%;border-radius:50%;z-index:1;
+.globe-shadow{position:absolute;left:31%;top:83.4%;width:37%;height:4.6%;border-radius:50%;z-index:1;
   background:radial-gradient(closest-side,rgba(40,20,0,.42),rgba(40,20,0,.16) 62%,transparent 100%);filter:blur(5px)}
-.globe{position:absolute;left:34.77%;top:62.2%;width:29.3%;aspect-ratio:1;border-radius:50%;overflow:hidden;z-index:2;
+.globe{position:absolute;left:34.77%;top:61.25%;width:29.3%;aspect-ratio:1;border-radius:50%;overflow:hidden;z-index:2;
   background:url("https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_map_v1.png") 0 0/200% 100% repeat-x;
   animation:globe-spin 14s linear infinite}
 .globe::after{content:"";position:absolute;inset:0;border-radius:50%;

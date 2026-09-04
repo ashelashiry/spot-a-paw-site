@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mark comparison — One Tail One Meal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  body{background:var(--deep);color:var(--ivory)}
+  .cmp{width:min(1100px,94vw);margin:0 auto;padding:2.5rem 0 4rem}
+  .cmp h1{font-size:clamp(1.6rem,3.5vw,2.4rem)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem}
+  @media (max-width:800px){.row{grid-template-columns:1fr}}
+  .cell{text-align:center}
+  .cell h2{font-size:1.1rem;font-weight:700;margin-top:1rem;color:var(--orange)}
+  .cell p{color:rgba(242,235,221,.7);font-size:.9rem;max-width:36ch;margin:.3rem auto 0}
+  /* OLD: holed plate art, sphere in front, front rim clipped, hole-era geometry */
+  .mark-old{position:relative;width:min(340px,80vw);aspect-ratio:910/1224;margin:0 auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.4))}
+  .mark-old img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1}
+  .mark-old img.front{z-index:3;clip-path:inset(87.5% 0 0 0)}
+  .mark-old .g{position:absolute;left:30.3%;top:61.6%;width:39.4%;aspect-ratio:1;border-radius:50%;overflow:hidden;z-index:2}
+  .mark-old .sh{position:absolute;left:29%;top:84.6%;width:42%;height:6.5%;border-radius:50%;z-index:1;background:radial-gradient(closest-side,rgba(40,20,0,.42),rgba(40,20,0,.16) 62%,transparent 100%);filter:blur(5px)}
+  /* NEW: lowered-plate art, sphere resting on the plate's centre line */
+  .mark-new{position:relative;width:min(340px,80vw);aspect-ratio:1024/1244;margin:0 auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.4))}
+  .mark-new img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1}
+  .mark-new .g{position:absolute;left:34.77%;top:61.25%;width:29.3%;aspect-ratio:1;border-radius:50%;overflow:hidden;z-index:2}
+  .mark-new .sh{position:absolute;left:31%;top:83.4%;width:37%;height:4.6%;border-radius:50%;z-index:1;background:radial-gradient(closest-side,rgba(40,20,0,.42),rgba(40,20,0,.16) 62%,transparent 100%);filter:blur(5px)}
+  .g canvas{position:absolute;inset:0;width:100%!important;height:100%!important;display:block}
+  .g::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;background:
+    radial-gradient(circle closest-side at 36% 32%,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 55%),
+    radial-gradient(circle closest-side at 50% 50%,rgba(0,0,0,0) 70%,rgba(70,30,0,.22) 93%,rgba(50,20,0,.42) 100%)}
+</style>
+</head>
+<body>
+<div class="cmp">
+  <a href="index.html" style="color:var(--orange);text-decoration:none;font-weight:600">← Back to the site</a>
+  <h1>The mark, old vs new</h1>
+  <p style="color:rgba(242,235,221,.7)">Same 3D globe in both. Left: the original artwork with a punched hole (sphere in front, plate's front rim clipped over its base). Right: Ash's revised artwork with the plate lowered — the sphere rests on the plate.</p>
+  <div class="row">
+    <div class="cell">
+      <div class="mark-old">
+        <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=3" alt="">
+        <div class="sh"></div>
+        <div class="g"><canvas></canvas></div>
+        <img class="front" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=3" alt="">
+      </div>
+      <h2>Old — holed plate</h2><p>Globe seated in the well, rim in front of its base.</p>
+    </div>
+    <div class="cell">
+      <div class="mark-new">
+        <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/otom_mark_lowered_v1.png?v=1" alt="">
+        <div class="sh"></div>
+        <div class="g"><canvas></canvas></div>
+      </div>
+      <h2>New — lowered plate</h2><p>Globe resting on the plate; nothing occludes it.</p>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  if(!window.THREE) return;
+  var tex=new THREE.TextureLoader().load('assets/globe_equirect.png');
+  var START=THREE.MathUtils.degToRad(240), reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.g canvas').forEach(function(canvas){
+    var holder=canvas.parentElement, renderer;
+    try{ renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true}); }catch(e){ return; }
+    renderer.setPixelRatio(Math.min(devicePixelRatio||1,2)); renderer.toneMapping=THREE.NoToneMapping;
+    var scene=new THREE.Scene(), camera=new THREE.PerspectiveCamera(28,1,0.1,100); camera.position.set(0,0,3.9);
+    var globe=new THREE.Mesh(new THREE.SphereGeometry(1,96,96), new THREE.MeshBasicMaterial({map:tex}));
+    globe.rotation.order='ZYX'; globe.rotation.z=0.32; globe.rotation.y=START; scene.add(globe);
+    function size(){ var s=holder.clientWidth||120; renderer.setSize(s,s,false); }
+    size(); addEventListener('resize',size);
+    var last=0; (function frame(t){ requestAnimationFrame(frame); var dt=Math.min(0.05,(t-last)/1000||0); last=t; if(!reduce) globe.rotation.y+=dt*0.28; renderer.render(scene,camera); })(0);
+  });
+})();
+</script>
+</body>
+</html>
