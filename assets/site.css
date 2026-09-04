@@ -124,6 +124,10 @@ section{padding:5rem 0}
   background:radial-gradient(circle at 38% 34%,rgba(255,255,255,.18) 0%,rgba(255,255,255,0) 38%),
              radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 58%,rgba(60,25,0,.35) 88%,rgba(40,15,0,.55) 100%)}
 @keyframes globe-spin{from{background-position-x:0}to{background-position-x:-100%}}
+/* When WebGL is running, the canvas replaces the CSS map scroll. */
+.globe.gl{background:none;animation:none}
+.globe.gl::after{display:none}
+.globe canvas{position:absolute;inset:0;width:100%!important;height:100%!important;display:block}
 @media (prefers-reduced-motion:reduce){.globe{animation:none}}
 .pill{display:inline-block;padding:.35rem .75rem;border-radius:999px;background:rgba(255,121,0,.15);color:var(--orange);font-weight:700;font-size:.8rem;margin:.2rem .3rem .2rem 0}
 

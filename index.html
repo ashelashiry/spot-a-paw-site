@@ -185,7 +185,7 @@
     <div class="reveal">
       <!-- The One Tail One Meal mark with the spinning globe — same geometry as the app's SpinningGlobeMark (plate over a rotating map). -->
       <div class="globe-mark" role="img" aria-label="One Tail One Meal">
-        <div class="globe"></div>
+        <div class="globe"><canvas id="globe3d"></canvas></div>
         <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png" alt="">
       </div>
     </div>
@@ -232,5 +232,58 @@
 </footer>
 
 <script src="assets/site.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Real 3D globe inside the One Tail One Meal plate: a lit sphere with the
+// brand-coloured equirectangular map, slow rotation, soft rim. Falls back to
+// the CSS map scroll if WebGL is unavailable.
+(function () {
+  var canvas = document.getElementById('globe3d');
+  if (!canvas || !window.THREE) return;
+  var holder = canvas.parentElement;
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true }); }
+  catch (e) { return; }
+  holder.classList.add('gl');
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
+  camera.position.set(0, 0, 4.15);
+  var tex = new THREE.TextureLoader().load('assets/globe_equirect.png', function (t) { t.anisotropy = renderer.capabilities.getMaxAnisotropy(); });
+  var globe = new THREE.Mesh(
+    new THREE.SphereGeometry(1, 96, 96),
+    new THREE.MeshStandardMaterial({ map: tex, roughness: 0.62, metalness: 0.05 })
+  );
+  globe.rotation.z = 0.41; // Earth's tilt, and it reads less like a diagram
+  scene.add(globe);
+  // Soft rim so the sphere lifts off the plate.
+  var rim = new THREE.Mesh(
+    new THREE.SphereGeometry(1.035, 64, 64),
+    new THREE.MeshBasicMaterial({ color: 0xffb066, transparent: true, opacity: 0.16, side: THREE.BackSide })
+  );
+  scene.add(rim);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.72));
+  var key = new THREE.DirectionalLight(0xfff3e0, 0.95); key.position.set(-2.2, 1.6, 3); scene.add(key);
+  var fill = new THREE.DirectionalLight(0xffd9b0, 0.25); fill.position.set(2.5, -1, -1.5); scene.add(fill);
+  function size() {
+    var s = holder.clientWidth || 120;
+    renderer.setSize(s, s, false);
+    camera.aspect = 1; camera.updateProjectionMatrix();
+  }
+  size(); window.addEventListener('resize', size);
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var visible = true;
+  new IntersectionObserver(function (es) { es.forEach(function (e) { visible = e.isIntersecting; }); }).observe(holder);
+  var last = 0;
+  function frame(t) {
+    requestAnimationFrame(frame);
+    if (!visible) return;
+    var dt = Math.min(0.05, (t - last) / 1000 || 0); last = t;
+    if (!reduce) globe.rotation.y += dt * 0.28; // one turn ≈ 22 s
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
