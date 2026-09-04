@@ -251,7 +251,8 @@
   renderer.toneMapping = THREE.NoToneMapping;
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
-  camera.position.set(0, 0, 4.15);
+  // 3.9 makes the sphere overfill the canvas circle by ~2%, so the plate art covers its limb.
+  camera.position.set(0, 0, 3.9);
   var tex = new THREE.TextureLoader().load('assets/globe_equirect.png', function (t) {
     t.anisotropy = renderer.capabilities.getMaxAnisotropy();
     t.needsUpdate = true;

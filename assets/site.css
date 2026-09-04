@@ -116,8 +116,10 @@ section{padding:5rem 0}
    app's equirectangular map. Globe centre/radius measured off the artwork, same
    fractions the Flutter widget uses: cx 50.88% w, cy 76.23% h, r 18.9% w. */
 .globe-mark{position:relative;width:min(340px,72vw);aspect-ratio:910/1224;margin:0 auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.4))}
-.globe-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
-.globe{position:absolute;left:31.98%;top:62.18%;width:37.8%;aspect-ratio:1;border-radius:50%;overflow:hidden;
+.globe-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1}
+/* Globe sits IN FRONT of the plate (as in the brand artwork) and ~4% larger than the
+   hole, so the plate ring tangent to the hole is covered — no double edge. */
+.globe{position:absolute;left:30.3%;top:61.6%;width:39.4%;aspect-ratio:1;border-radius:50%;overflow:hidden;z-index:2;box-shadow:0 10px 24px rgba(0,0,0,.35);
   background:url("https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_map_v1.png") 0 0/200% 100% repeat-x;
   animation:globe-spin 14s linear infinite}
 .globe::after{content:"";position:absolute;inset:0;border-radius:50%;
@@ -128,8 +130,8 @@ section{padding:5rem 0}
 .globe.gl{background:none;animation:none}
 /* Shading over the unlit WebGL sphere: soft highlight top-left, shadow toward the limb. */
 .globe.gl::after{display:block;pointer-events:none;background:
-  radial-gradient(circle at 36% 32%,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 40%),
-  radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 62%,rgba(70,30,0,.28) 90%,rgba(50,20,0,.5) 100%)}
+  radial-gradient(circle closest-side at 36% 32%,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 55%),
+  radial-gradient(circle closest-side at 50% 50%,rgba(0,0,0,0) 70%,rgba(70,30,0,.22) 93%,rgba(50,20,0,.42) 100%)}
 .globe canvas{position:absolute;inset:0;width:100%!important;height:100%!important;display:block}
 @media (prefers-reduced-motion:reduce){.globe{animation:none}}
 .pill{display:inline-block;padding:.35rem .75rem;border-radius:999px;background:rgba(255,121,0,.15);color:var(--orange);font-weight:700;font-size:.8rem;margin:.2rem .3rem .2rem 0}
