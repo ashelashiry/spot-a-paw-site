@@ -20,7 +20,12 @@
   body{background:var(--ivory)}
   .rwrap{width:min(560px,92vw);margin:0 auto;padding:2.2rem 0 3rem}
   .rcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 60px rgba(4,52,49,.10)}
-  .rmedia{position:relative;aspect-ratio:4/3;background:var(--nile)}
+  .rmedia{position:relative;aspect-ratio:4/3;background:var(--nile);display:none}
+  .rmedia.on{display:block}
+  .rhero{background:var(--nile);color:var(--ivory);padding:1.5rem 1.3rem;display:flex;align-items:center;gap:.9rem}
+  .rhero img{width:52px;height:52px}
+  .rhero b{font-family:var(--display);font-size:1.15rem;display:block}
+  .rhero span{font-size:.9rem;opacity:.85}
   .rmedia img{width:100%;height:100%;object-fit:cover;display:block}
   .rpill{position:absolute;top:14px;left:14px;background:var(--orange);color:#fff;font-weight:700;font-size:.82rem;padding:.36rem .8rem;border-radius:999px}
   .rbody{padding:1.3rem 1.3rem 1.5rem}
@@ -45,7 +50,11 @@
   </a>
 
   <div class="rcard">
-    <div class="rmedia" id="media"><span class="rpill">Needs help</span></div>
+    <div class="rmedia" id="media"></div>
+    <div class="rhero" id="hero">
+      <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/eg/hover_needs_o.png" alt="">
+      <div><b>Needs help</b><span>Spotted on the rescue map</span></div>
+    </div>
     <div class="rbody">
       <h1 id="headline">A paw needs your help</h1>
       <p class="rmeta" id="meta">Someone nearby spotted a stray animal. Open it in Spot a Paw to see where it is and lend a hand.</p>
@@ -97,8 +106,11 @@
       document.getElementById('desc').textContent = r.description || '';
       var m = document.getElementById('media');
       var pill = statusText[r.status] || 'Needs help';
-      m.innerHTML = (photo ? '<img alt="" src="' + esc(photo) + '">' : '') +
-                    '<span class="rpill">' + esc(pill) + '</span>';
+      if (photo) {
+        m.innerHTML = '<img alt="" src="' + esc(photo) + '"><span class="rpill">' + esc(pill) + '</span>';
+        m.classList.add('on');
+        document.getElementById('hero').style.display = 'none';
+      }
       document.title = document.getElementById('headline').textContent + ' — Spot a Paw';
     })
     .catch(function () {});                 // the generic card is the fallback
