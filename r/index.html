@@ -66,7 +66,8 @@
   var SB = 'https://qyyydmjrrtyauyawheos.supabase.co';
   var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5eXlkbWpycnR5YXV5YXdoZW9zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0ODU5MjMsImV4cCI6MjEwMTA2MTkyM30.O93FlNx3Sd0QGutNLUEcGH-aUMa4KNcn_V-rzVZc9-o';
   var id = new URLSearchParams(location.search).get('id') || '';
-  var deep = id ? 'spotapaw://reportDetails?reportId=' + encodeURIComponent(id) : 'spotapaw://';
+  // the app registers scheme spotapaw + host onetailonemeal.com (Flutter deep linking)
+  var deep = 'spotapaw://onetailonemeal.com/' + (id ? 'reportDetails?reportId=' + encodeURIComponent(id) : '');
   document.getElementById('open').href = deep;
 
   var needText = {
