@@ -13,8 +13,15 @@
   /* In-app mode: the app opens this page in a browser sheet; hide the site chrome. */
   body.embed .nav, body.embed footer, body.embed .help-hero .back { display:none }
   body.embed .help-hero { padding-top: 2.4rem }
+  .lang-switch { display:inline-flex; gap:.4rem; align-items:center; background:rgba(242,235,221,.12);
+                 border:1px solid rgba(242,235,221,.3); border-radius:999px; padding:.3rem .5rem; margin-top:1rem }
+  .lang-switch a { color:var(--ivory); text-decoration:none; font-weight:700; font-size:.86rem;
+                   padding:.28rem .7rem; border-radius:999px; opacity:.75 }
+  .lang-switch a.on { background:var(--orange); color:#fff; opacity:1 }
 </style>
 <link rel="canonical" href="https://spot-a-paw.com/help.html">
+<link rel="alternate" hreflang="en" href="https://spot-a-paw.com/help.html">
+<link rel="alternate" hreflang="ar" href="https://spot-a-paw.com/help-ar.html">
 <meta property="og:url" content="https://spot-a-paw.com/help.html">
 <meta property="og:image" content="https://spot-a-paw.com/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -47,6 +54,7 @@
     <span class="eyebrow">Help centre</span>
     <h1 style="font-size:clamp(2rem,5vw,3.4rem)">How everything works, <span style="color:var(--orange)">screen by screen.</span></h1>
     <p class="lead" style="color:rgba(242,235,221,.8)">Every guide below plays through the real app. Tap a step to jump to it, or just watch.</p>
+    <div class="lang-switch"><a href="help.html" class="on">English</a><a href="help-ar.html">العربية</a></div>
     <div class="search"><input id="help-q" type="search" placeholder="Search — e.g. video, cartouche, feeding route, delete account"></div>
   </div>
 </header>

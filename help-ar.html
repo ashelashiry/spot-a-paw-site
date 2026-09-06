@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مركز المساعدة — Spot a Paw</title>
+<meta name="description" content="شرح تطبيق Spot a Paw شاشة بشاشة: رصد كف، الخريطة، جولات الإطعام، قصص النجاح، ملفك، المظهر والحساب.">
+<link rel="icon" href="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/app_icon_spot_a_paw.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* In-app mode: the app opens this page in a browser sheet; hide the site chrome. */
+  body.embed .nav, body.embed footer, body.embed .help-hero .back { display:none }
+  body.embed .help-hero { padding-top: 2.4rem }
+
+  /* Arabic: one typeface change and a handful of direction fixes — the rest of
+     the design is the English page's, mirrored by dir="rtl". */
+  body { font-family: 'Cairo', 'Inter', system-ui, sans-serif }
+  h1, h2, h3, .brand, .eyebrow, .tour-steps b { font-family: 'Cairo', 'Bricolage Grotesque', sans-serif }
+  .eyebrow { letter-spacing: 0 }
+  .eyebrow::before { margin-left: .1rem }
+  .topic h2 { flex-direction: row }
+  .lang-switch { display:inline-flex; gap:.4rem; align-items:center; background:rgba(242,235,221,.12);
+                 border:1px solid rgba(242,235,221,.3); border-radius:999px; padding:.3rem .5rem; margin-top:1rem }
+  .lang-switch a { color:var(--ivory); text-decoration:none; font-weight:700; font-size:.86rem;
+                   padding:.28rem .7rem; border-radius:999px; opacity:.75 }
+  .lang-switch a.on { background:var(--orange); color:#fff; opacity:1 }
+  .en-note { direction:ltr; text-align:left }
+</style>
+<link rel="canonical" href="https://spot-a-paw.com/help-ar.html">
+<link rel="alternate" hreflang="en" href="https://spot-a-paw.com/help.html">
+<link rel="alternate" hreflang="ar" href="https://spot-a-paw.com/help-ar.html">
+<meta property="og:url" content="https://spot-a-paw.com/help-ar.html">
+<meta property="og:title" content="مركز المساعدة — Spot a Paw">
+<meta property="og:description" content="شرح التطبيق شاشة بشاشة: رصد كف، الخريطة، جولات الإطعام، قصص النجاح وملفك.">
+<meta property="og:image" content="https://spot-a-paw.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spot a Paw">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://spot-a-paw.com/assets/og.png">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/brand_logo_spot_v1.png" alt="Spot a Paw"> Spot a Paw</a>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="index.html#mission">رسالتنا</a>
+      <a href="index.html#how">إزاي بيشتغل</a>
+      <a href="index.html#features">التطبيق</a>
+      <a href="index.html#skins">ستة مظاهر</a>
+      <a href="help-ar.html" style="opacity:1">مركز المساعدة</a>
+      <a class="btn btn-orange btn-sm" href="https://app.spot-a-paw.com">افتح التطبيق</a>
+    </div>
+  </div>
+</nav>
+
+<header class="help-hero">
+  <div class="wrap">
+    <span class="eyebrow">مركز المساعدة</span>
+    <h1 style="font-size:clamp(2rem,5vw,3.4rem)">كل حاجة في التطبيق، <span style="color:var(--orange)">شاشة بشاشة.</span></h1>
+    <p class="lead" style="color:rgba(242,235,221,.8)">كل شرح تحت ده متصوّر من التطبيق نفسه. اضغط على أي خطوة تروح لها، أو سيبه يمشي لوحده.</p>
+    <div class="lang-switch"><a href="help.html">English</a><a href="help-ar.html" class="on">العربية</a></div>
+    <div class="search"><input id="help-q" type="search" placeholder="ابحث — مثلًا: فيديو، خرطوش، جولة إطعام، حذف الحساب"></div>
+  </div>
+</header>
+
+<div class="wrap help-layout">
+
+  <aside class="help-side">
+    <div class="grp">ابدأ من هنا</div>
+    <a href="#start">أول خطوة</a>
+    <a href="#spot">ترصد كفًا</a>
+    <div class="grp">المساعدة</div>
+    <a href="#feed">صفحة كفوف وذيول</a>
+    <a href="#help">تساعد كفًا</a>
+    <a href="#map">خريطة الإنقاذ</a>
+    <a href="#feeding">نقاط الإطعام والجولات</a>
+    <div class="grp">سجلّك</div>
+    <a href="#stories">قصص النجاح</a>
+    <a href="#mine">إنقاذاتي والكارما</a>
+    <a href="#profile">ملفك والخرطوش</a>
+    <a href="#skins">المظهر (الـ Skins)</a>
+    <a href="#communities">المجتمعات</a>
+    <div class="grp">الحساب</div>
+    <a href="#account">الحساب والخصوصية</a>
+    <a href="#trouble">حل المشاكل</a>
+    <a href="#contact">كلّمنا</a>
+  </aside>
+
+  <main>
+
+    <section class="topic" id="start">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_default_o1.png" alt="">أول خطوة</h2>
+      <p class="muted">التطبيق مجاني. سجّل دخولك بالإيميل أو بجوجل أو بآبل؛ أول شاشة بتوريك الخمس حاجات اللي تقدر تعملها، وبعدها تلاقي نفسك في الصفحة الرئيسية.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/onboarding.png" alt="">
+          <img src="assets/screens-ar/auth.png" alt="">
+          <img src="assets/screens-ar/paws_and_tails.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>١ · أهلًا بيك</b><span class="muted">خمس أدوار — تحدّد مكان حيوان، تقول محتاج إيه، تشارك في إنقاذ، تخطّط جولة إطعام، أو تسوق عربية لتوصيل حالة. اضغط <em>ابدأ الإنقاذ</em>.</span></li>
+            <li><b>٢ · تسجيل الدخول</b><span class="muted">إيميل وكلمة مرور، أو ضغطة واحدة بجوجل أو آبل. لو دخلت بعد كده بنفس الإيميل، الحسابات بتترابط — مش هتخسر أي حاجة.</span></li>
+            <li><b>٣ · وأنت جوه</b><span class="muted"><em>كفوف وذيول</em> هي الصفحة الرئيسية. الشريط تحت دايمًا موجود: الخريطة، كفوف وذيول، ارصد كفًا، إنقاذاتي، المجتمعات.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+      <details open><summary>التطبيق بالعربي ولا بالإنجليزي؟</summary><p>الاتنين. أول ما تفتح التطبيق هتلاقي <em>English | العربية</em> فوق شاشة الترحيب، وتقدر تغيّرها في أي وقت من <em>ملفك ← النشاط والإعدادات ← اللغة</em>. اختيارك بيتحفظ على تليفونك، ولو تليفونك بالعربي التطبيق بيفتح بالعربي من نفسه.</p></details>
+      <details><summary>لازم أوافق على الموقع؟</summary><p>وافق على إذن الموقع لما يطلبه — ده اللي بيخلي الصفحة تعرف إيه "القريب منك"، وبيخلي الدبوس ينزل مكانك بالظبط. تقدر تغيّر نطاق البحث في أي وقت من الصفحة الرئيسية.</p></details>
+    </section>
+
+    <section class="topic" id="spot">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/nav_spot_a_paw_o1.png" alt="">ترصد كفًا</h2>
+      <p class="muted">من لحظة ما تشوف الحيوان لحد ما يبقى فيه دبوس يقدر كل اللي حواليك يتصرّفوا عليه — ٣٠ ثانية.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/spot_1_form.png" alt="">
+          <img src="assets/screens-ar/spot_2_picked.png" alt="">
+          <img src="assets/screens-ar/spot_3_details.png" alt="">
+          <img src="assets/screens-ar/spot_4_pin.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>١ · اضغط ارصد كفًا</b><span class="muted">الزرار اللي في نص الشريط تحت. اختار كلب أو قطة أو غيرهم، وإيه اللي محتاجينه — طعام، ماء، علاج، إنقاذ، مأوى، أو أم وصغارها.</span></li>
+            <li><b>٢ · صورة أو فيديو</b><span class="muted">صوّر في اللحظة أو اختار من المعرض. الفيديوهات القصيرة تمام — هتشوف <em>جاري الرفع…</em> وهو بيتحمّل، والكارت بيعرض لقطة من الفيديو وعليها علامة تشغيل.</span></li>
+            <li><b>٣ · هما فين؟</b><span class="muted">الدبوس بيبدأ من مكانك. اسحبه لو الحيوان في الناحية التانية من الشارع. واكتب سطر وصف — "كلب أسود بيعرج، جنب الفرن" ده اللي بيخلي السواق يلاقيه.</span></li>
+            <li><b>٤ · ارصد هذا الكف</b><span class="muted">خلاص. الحالة بقت على الصفحة والخريطة لكل اللي في النطاق، ومكتوب عليها <em>يحتاج مساعدة</em>.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+      <div class="vid"><video controls playsinline muted preload="metadata" poster="assets/video-ar/spotting.jpg"><source src="assets/video-ar/spotting.mp4" type="video/mp4"></video></div><p class="muted" style="margin-top:-.4rem;font-size:.9rem">▶ ترصد كفًا — متصوّر من التطبيق نفسه.</p>
+      <details><summary>أقدر أعدّل البلاغ أو أسحبه؟</summary><p>أيوه. افتح البلاغ واضغط على القلم عشان تعدّل أي حاجة — حتى مكان الدبوس. واسحبه لو كان بالغلط أو الحيوان مشي؛ البلاغات المسحوبة بتفضل في سجلّك تحت <em>إنقاذاتي ← مسحوب</em>.</p></details>
+      <details><summary>مش عارف هما محتاجين إيه بالظبط</summary><p>اختار <em>إنقاذ</em>. دي معناها "حد ييجي يشوف". أي حد يساعد يقدر يغيّر الحالة بعد ما يشوف الحيوان بنفسه.</p></details>
+    </section>
+
+    <section class="topic" id="feed">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/nav_paws_and_tails_o1.png" alt="">صفحة كفوف وذيول</h2>
+      <p class="muted">الصفحة الرئيسية. ثلاث تبويبات فوق، شريط فلاتر تحتهم، وعدّاد بيقولك بالظبط كام كف محتاج مساعدة جنبك.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/feed_1_all.png" alt="">
+          <img src="assets/screens-ar/feed_2_needs.png" alt="">
+          <img src="assets/screens-ar/feed_4_feeding.png" alt="">
+          <img src="assets/screens-ar/feed_5_success.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>كفوف مرصودة</b><span class="muted">كل البلاغات المفتوحة جنبك، الأحدث الأول. <em>الكل · يحتاج مساعدة · المساعدة جارية</em> بتضيّق حسب الحالة؛ و<em>الفلاتر</em> بتفتح الاحتياجات ونوع الحيوان ونطاق البحث.</span></li>
+            <li><b>العدّاد</b><span class="muted">"٢٤ كف تحتاج مساعدتك بالقرب منك" — رقم حيّ بيتغيّر مع كل فلتر ومع النطاق. اضغط على شريحة المسافة عشان تصفّرها.</span></li>
+            <li><b>نقاط الإطعام وقصص النجاح</b><span class="muted">التبويبين التانيين: أماكن الإطعام المنتظمة (وجولة النهارده)، وكل كف وصل بيته.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+      <div class="vid"><video controls playsinline muted preload="metadata" poster="assets/video-ar/feed.jpg"><source src="assets/video-ar/feed.mp4" type="video/mp4"></video></div><p class="muted" style="margin-top:-.4rem;font-size:.9rem">▶ الصفحة الرئيسية: الفلاتر والتبويبات الثلاثة.</p>
+      <details><summary>الشارات اللي على الكروت معناها إيه؟</summary><p><em>يحتاج مساعدة</em> (أحمر) — لسه محدش مسك الحالة. <em>المساعدة جارية</em> (برتقالي) — حد ضغط <em>ساعد هذا الكف</em>. <em>تم إنقاذه</em> (أخضر) — خلصت، وبقت في قصص النجاح.</p></details>
+      <details><summary>ليه مش شايف بلاغ أنا عارف إنه موجود؟</summary><p>راجع النطاق (شريحة المسافة تحت شريط الفلاتر) وأي فلاتر سايبها شغالة. العدّاد بيوضّح كام حالة الفلاتر مخبّياها.</p></details>
+    </section>
+
+    <section class="topic" id="help">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/hover_needs_o.png" alt="">تساعد كفًا</h2>
+      <p class="muted">افتح أي كارت توصل لـ <em>حالة الإنقاذ</em> — صفحة البلاغ نفسه، ومنها بتحصل المساعدة.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/help_1_status.png" alt="">
+          <img src="assets/screens-ar/help_2_map.png" alt="">
+          <img src="assets/screens-ar/help_3_comments.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>١ · حالة الإنقاذ</b><span class="muted">الصورة أو الفيديو، محتاجين إيه، بعدهم كام، مين اللي بلّغ، خريطة فيها <em>افتح في الخرائط</em> للاتجاهات، وتعليقات باقي المساعدين.</span></li>
+            <li><b>٢ · ساعد هذا الكف</b><span class="muted">ضغطة واحدة معناها "أنا ماسكها". الكارت بيتحوّل لـ <em>المساعدة جارية</em> عند الكل، واسمك بينضم للمساعدين، وتقدر تكتب تحديثات في التعليقات.</span></li>
+            <li><b>٣ · سجّل الإنقاذ</b><span class="muted">لما الحيوان يبقى في أمان، سجّلها. بتنتقل لقصص النجاح وكل اللي ساعدوا بياخدوا كارما.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+      <div class="vid"><video controls playsinline muted preload="metadata" poster="assets/video-ar/helping.jpg"><source src="assets/video-ar/helping.mp4" type="video/mp4"></video></div><p class="muted" style="margin-top:-.4rem;font-size:.9rem">▶ فتح بلاغ.</p>
+      <details><summary>إزاي أشغّل فيديو على بلاغ؟</summary><p>اضغط على علامة التشغيل الدايرية — على الكارت، أو في إنقاذاتي، أو على البلاغ نفسه — والفيديو بيفتح ملء الشاشة بأزرار عادية وزرار قفل. الكارت بيعرض لقطة ساكنة بس لحد ما تضغط، فمفيش حاجة بتتحمّل من نفسها.</p></details>
+      <details><summary>ينفع أكتر من واحد يساعد؟</summary><p>أيوه — دي الفكرة أصلًا. عدد المساعدين وأسماءهم بيظهروا على البلاغ. اتفقوا في التعليقات ("معايا قفص، مين معاه عربية؟").</p></details>
+      <details><summary>ينفع أشارك حالة على واتساب؟</summary><p>أيوه. اضغط زرار المشاركة فوق في <em>حالة الإنقاذ</em> — التطبيق بيجهّز كارت بصورة الحيوان واللي محتاجه ولينك للحالة. واتساب بيعرض الصورة جوه الشات، واللي يضغط اللينك يفتح الحالة في التطبيق.</p></details>
+    </section>
+
+    <section class="topic" id="map">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/nav_map_o1.png" alt="">خريطة الإنقاذ</h2>
+      <p class="muted">كل حاجة في مشهد واحد: الكفوف المرصودة، نقاط الإطعام، جولاتك، والأطباء والملاجئ اللي في نطاقك.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/map_1.png" alt="">
+          <img src="assets/screens-ar/map_4_routes.png" alt="">
+          <img src="assets/screens-ar/map_5_vets.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>الدبابيس</b><span class="muted">الكفوف البرتقالي بلاغات مفتوحة؛ اضغط أي واحد يفتحلك البلاغ. المفاتيح اللي فوق بتشغّل وتقفل <em>نقاط الإطعام</em> و<em>جولاتي</em> كل واحدة لوحدها.</span></li>
+            <li><b>الجولات</b><span class="muted">كل جولة محفوظة بترسم بلونها، بمحطات مرقّمة وأسهم للاتجاه — فمستحيل جولتين يتلخبطوا.</span></li>
+            <li><b>أطباء وملاجئ قريبة</b><span class="muted">شغّلها تشوف العيادات والملاجئ في نطاق بحثك؛ حرّك الخريطة يدوّر تاني في المكان اللي أنت فيه.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+      <div class="vid"><video controls playsinline muted preload="metadata" poster="assets/video-ar/map.jpg"><source src="assets/video-ar/map.mp4" type="video/mp4"></video></div><p class="muted" style="margin-top:-.4rem;font-size:.9rem">▶ الخريطة: الفلاتر، نقاط الإطعام، الجولات، والأطباء القريبين.</p>
+      <details><summary>الخريطة فاضية أو رمادية</summary><p>غالبًا إذن الموقع أو نت بطيء. راجع الإعدادات ← Spot a Paw ← الموقع على <em>أثناء الاستخدام</em>، وبعدين افتح تبويب الخريطة تاني.</p></details>
+    </section>
+
+    <section class="topic" id="feeding">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_food_o1.png" alt="">نقاط الإطعام والجولات</h2>
+      <p class="muted">دي للناس اللي بتطعم نفس النواصي كل ليلة. النقطة مكان؛ الجولة هي ترتيب الليلة دي.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/fs_1_top.png" alt="">
+          <img src="assets/screens-ar/fs_2_mid.png" alt="">
+          <img src="assets/screens-ar/fs_3_low.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>النقاط</b><span class="muted">ضيف نقطة إطعام باسم، وإيه اللي بيتحتاج فيها عادةً، ودبوس. النقاط الحسّاسة بتخفي مكانها الدقيق ومواعيدها عن أي حد غيرك.</span></li>
+            <li><b>جولة النهارده</b><span class="muted">اختار النقاط بالترتيب واحفظها. <em>استخدم اليوم</em> بتخلي أي جولة محفوظة هي جولة الليلة؛ و<em>افتح الجولة</em> بتبدأها.</span></li>
+            <li><b>التسجيل</b><span class="muted">اضغط <em>أُطعم اليوم</em> أو <em>رأيتهم</em> عند كل محطة عشان اللي بعدك يعرف. الجولة بتظهر على الخريطة بمحطات مرقّمة.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="stories">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/hover_rescued_o.png" alt="">قصص النجاح</h2>
+      <p class="muted">السبب اللي بنعمل ده كله عشانه. أربع تبويبات، أربع محطات: <em>تم إنقاذه · تم تبنّيه · بشريحة · معقّم</em>.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/feed_5_success.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>تم إنقاذه</b><span class="muted">كل بلاغ خلص، ومين أنقذه، وإمتى، والكارما اللي راحت للمساعدين. اضغط أي قصة تفتحلك البلاغ كامل.</span></li>
+            <li><b>تم تبنّيه · بشريحة · معقّم</b><span class="muted">دي اللعبة الطويلة — الكف المنقَذ يبقى معقّم وبشريحة ومتبنّى. التبويبات دي بتمتلي مع كل تسجيل جديد.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="mine">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_rescue_o1.png" alt="">إنقاذاتي والكارما</h2>
+      <p class="muted">سجلّك. كل اللي رصدته، وكل اللي بتساعد فيه، وكل اللي وصل بيته.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/my_rescues.png" alt="">
+          <img src="assets/screens-ar/prof_2_impact.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>مرصود · تم إنقاذه · أساعد · مسحوب</b><span class="muted">بلاغاتك حسب حالتها. <em>أساعد</em> يعني كل بلاغ ضغطت عليه "أقدر أساعد" ولسه ما خلصش.</span></li>
+            <li><b>الكارما</b><span class="muted">كل إنقاذ ساعدت فيه بياخد كارما؛ بتظهر في ملفك مع الكفوف اللي ساعدتها، والبلاغات اللي عملتها، وأيام نشاطك، والحيوانات اللي اتعقّمت أو اتحطّ لها شريحة بمساعدتك. دي تقدير مش منافسة — بس فيه لوحة شرف برضه.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="profile">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/avatar_default_king_v1.png" alt="">ملفك والخرطوش</h2>
+      <p class="muted">الميدالية بتحمل صورتك وخرطوش فيه اسمك — زي بتاع الفراعنة، لأنك فرعون بالنسبة للحيوانات اللي بتطعمها. وتحتها سجلّك كله في ستة أرقام.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/prof_1.png" alt="">
+          <img src="assets/screens-ar/prof_2_impact.png" alt="">
+          <img src="assets/screens-ar/prof_3_settings.png" alt="">
+          <img src="assets/screens-ar/prof_4_edit.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>ملفك</b><span class="muted">اضغط ميداليتك من أي مكان في التطبيق. شارة دورك واسمك وسطر عنك بيقعدوا تحت الخرطوش.</span></li>
+            <li><b>أثرك في الإنقاذ</b><span class="muted">ستة أرقام في لوحة واحدة: <em>كفوف ساعدتها</em>، <em>بلاغات أرسلتها</em>، <em>نقاط الكارما</em>، <em>أيام النشاط</em>، <em>معقّم</em> و<em>بشريحة</em>. اضغط أي رقم يفتحلك القائمة اللي وراه.</span></li>
+            <li><b>النشاط والإعدادات</b><span class="muted">ستة صفوف: <em>المظهر</em>، <em>اللغة</em>، <em>نشاطي</em> (أو <em>لوحة الإشراف</em> للمشرفين)، <em>المساعدة والإرشادات</em>، <em>تسجيل الخروج</em> و<em>حذف الحساب</em>.</span></li>
+            <li><b>تعديل الملف</b><span class="muted">اسمك، سطر عنك، <em>اسم الخرطوش</em> (١٢ حرف بيظبطوا أكتر — سيبه فاضي ويستخدم اسمك الأول)، وصورتك. اسحب واقرص عشان تظبط الصورة وبعدين <em>حفظ الصورة</em>.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+      <div class="vid"><video controls playsinline muted preload="metadata" poster="assets/video-ar/profile.jpg"><source src="assets/video-ar/profile.mp4" type="video/mp4"></video></div><p class="muted" style="margin-top:-.4rem;font-size:.9rem">▶ الملف، أثرك في الإنقاذ، الإعدادات، المظهر وتعديل الملف.</p>
+      <details><summary>اسم الخرطوش ما اتغيّرش</summary><p>بيتحفظ وأنت بتكتب — استنى ثانية وبعدين اخرج من الصفحة. لو لسه الاسم القديم، اسحب لتحديث الملف أو اقفل التطبيق وافتحه. لو ما اتغيّرش خالص، ابعتلنا بالإيميل اللي مسجّل بيه.</p></details>
+      <details><summary>ليه <em>معقّم</em> و<em>بشريحة</em> في لوحة أثرك؟</summary><p>لأن دي اللعبة الطويلة. حيوان اتأكل يوم كويس؛ حيوان اتعقّم واتحطّ له شريحة حياة اتغيّرت. الرقمين بيحسبوا الحيوانات اللي في بلاغات عملتها أو ساعدت فيها واتسجّل بعد كده إنها اتعقّمت أو اتحطّ لها شريحة.</p></details>
+    </section>
+
+    <section class="topic" id="skins">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/eg/set_lookfeel.png" alt="">المظهر — مظاهر إقليمية</h2>
+      <p class="muted">التطبيق اتولد في القاهرة، فبيلبس بردي ومناظر النيل بشكل افتراضي. بس مش لازم. اختار الشكل اللي يناسب مكانك — أو اللي بيعجبك وخلاص.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/prof_5_skins.png" alt="">
+          <img src="assets/screens/skin_2_region.png" alt="">
+          <img src="assets/screens/skin_3_feed.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>هتلاقيه فين</b><span class="muted">ملفك ← <em>النشاط والإعدادات</em> ← <em>المظهر</em>. الصف بيوريك مظهرك الحالي؛ اضغطه واختار غيره. التغيير فوري.</span></li>
+            <li><b>ستة مظاهر</b><span class="muted"><em>مصري</em> (لفائف بردي ومناظر النيل)، <em>عادي</em> (بسيط ومريح للعين)، <em>جنوب آسيا</em>، <em>جنوب شرق آسيا</em>، <em>غرب آسيا</em> و<em>أمريكا الجنوبية</em> — كل واحد بمناظره وأوراقه وأيقوناته وميداليته وخرطوشه.</span></li>
+            <li><b>مكانك أو ذوقك</b><span class="muted">بتطعم في مومباي أو مانيلا أو عمّان أو بوجوتا؟ اختار منطقتك يبقى التطبيق بشكل بلدك. أو تجاهل الجغرافيا خالص واختار اللي مبسوط بيه — المظهر بيغيّر المناظر والأوراق بس، مش الأزرار ولا بياناتك ولا لغتك.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+      <details><summary>هيمشي معايا على تليفون تاني؟</summary><p>أيوه. اختيارك بيتحفظ في ملفك، فلما تسجّل دخولك على جهاز جديد هتلاقي نفس الشكل.</p></details>
+      <details><summary>فيه شاشة لسه بالشكل القديم</summary><p>الشاشات اللي كانت مفتوحة بتترسم من جديد لما ترجع لها؛ ودبابيس الخريطة بتتحدّث أول ما تفتح الخريطة تاني. لو فضلت حاجة قديمة، اسحب لتحديث أو اقفل التطبيق وافتحه.</p></details>
+      <details><summary>هيبقى فيه مظاهر تانية؟</summary><p>دي الفكرة — الرسومات مجلد لكل منطقة، فالمظاهر الجديدة بتوصل من غير تحديث للتطبيق. قولنا بتطعم فين والشكل يبقى إزاي.</p></details>
+    </section>
+
+    <section class="topic" id="communities">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_mother_pups_o1.png" alt="">المجتمعات</h2>
+      <p class="muted">مجموعات الإنقاذ المحلية جوه التطبيق — الناس اللي بتطعم منطقتك أصلًا.</p>
+      <div class="tour" data-interval="4500">
+        <div class="phone"><div class="notch"></div><div class="screen">
+          <img src="assets/screens-ar/communities.png" alt="">
+        </div></div>
+        <div>
+          <ul class="tour-steps">
+            <li><b>انضم أو أنشئ</b><span class="muted">اتفرّج على المجموعات القريبة منك، انضم لواحدة، أو اعمل واحدة لشارع أو حديقة أو ملجأ. الأعضاء بيشوفوا بلاغات بعض الأول.</span></li>
+          </ul>
+          <div class="tour-ctl"><button aria-label="تشغيل/إيقاف">❚❚</button><div class="bar"><i></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="account">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/medallionthick_v1.png" alt="">الحساب والخصوصية</h2>
+      <details open><summary>بتحتفظوا بإيه عني؟</summary><p>إيميلك، اسمك، سطر التعريف والصورة لو حطّيتهم، بلاغاتك (بمكانها وصورها)، ومساعداتك وتسجيلاتك. الموقع بيتقرا وأنت بتستخدم التطبيق بس. إحنا مش بنبيع ولا بنشارك أي بيانات شخصية — أبدًا.</p></details>
+      <details><summary>مين اللي بيشوف بلاغاتي؟</summary><p>كل اللي بيستخدم التطبيق قريب منك — دي الطريقة اللي المساعدة بتوصل بيها. إيميلك ما بيظهرش أبدًا؛ اسمك وخرطوشك بيظهروا.</p></details>
+      <details><summary>إزاي أحذف حسابي؟</summary><p>ملفك ← <em>النشاط والإعدادات</em> ← <em>حذف الحساب</em>. بيمسح ملفك وبياناتك الشخصية. البلاغات اللي عملتها بتفضل بدون اسمك، عشان الحيوانات اللي فيها ما تخسرش تاريخها.</p></details>
+      <details><summary>سجّلت بآبل/جوجل وشايف ملف "مختلف"</summary><p>لو الإيميل نفس الإيميل اللي عندك، التطبيق بيربطهم — يعني أنت بتبصّ على ملفك القديم بخرطوشه وكل حاجة. مفيش حاجة ضاعت.</p></details>
+      <details><summary>نسيت كلمة المرور</summary><p>في شاشة الدخول اضغط <em>نسيت كلمة المرور؟</em>؛ الإيميل بييجي من support@spot-a-paw.com. شوف السبام أول مرة.</p></details>
+    </section>
+
+    <section class="topic" id="trouble">
+      <h2><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/hover_filters_o.png" alt="">حل المشاكل</h2>
+      <details><summary>الدخول بآبل طلّع خطأ بس دخّلني</summary><p>آبل ساعات بتقول "لم يكتمل" لما توافق مرتين في نفس الجلسة. لو دخلت فعلًا، تمام. لو حصلت في محاولة جديدة، اقفل التطبيق وافتحه وجرّب تاني، وبعدين قولنا.</p></details>
+      <details><summary>الصفحة فاضية</summary><p>يا إما محدش رصد حاجة في نطاقك لسه (كن أنت الأول!) يا إما فيه فلتر شغّال. اضغط <em>الكل</em> وراجع شريحة المسافة.</p></details>
+      <details><summary>فيديو مش راضي يشتغل</summary><p>افتح البلاغ واضغط علامة التشغيل. الفيديوهات بتتشغّل من النت، فالاتصال الضعيف ممكن ياخد ثواني. لو ده رفعك أنت وما اشتغلش خالص، ارفع مقطع أقصر.</p></details>
+      <details><summary>الموقع غلط</summary><p>آيفون: الإعدادات ← الخصوصية ← خدمات الموقع ← Spot a Paw ← <em>أثناء الاستخدام</em> و<em>الموقع الدقيق</em> مفعّل. وبعدين اسحب الدبوس وأنت بترصد لو لسه بينزل بعيد.</p></details>
+    </section>
+
+    <section class="topic" id="contact">
+      <h2>كلّمنا</h2>
+      <p class="lead">ابعت لـ <a href="mailto:support@spot-a-paw.com">support@spot-a-paw.com</a> — صورة للشاشة والإيميل اللي مسجّل بيه بيوصّلوك لأسرع رد. وعن One Tail One Meal، زور <a href="https://onetailonemeal.com" target="_blank" rel="noopener">onetailonemeal.com</a>.</p>
+      <p class="muted en-note">Prefer English? <a href="help.html">Read this page in English →</a></p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="yr"></span> One Tail One Meal — Spot a Paw. لأن كل ذيل يستاهل وجبة.</p>
+    <p><a href="privacy.html">الخصوصية</a> · <a href="help.html">English help centre</a> · <a href="mailto:support@spot-a-paw.com">support@spot-a-paw.com</a></p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
