@@ -79,37 +79,83 @@
   var deep = 'spotapaw://onetailonemeal.com/' + (id ? 'reportDetails?reportId=' + encodeURIComponent(id) : '');
   document.getElementById('open').href = deep;
 
+  // public_reports: a narrow, anon-readable view of reports. It carries the
+  // title, the photo and the state -- and deliberately NOT lat, lng or who
+  // reported it, so a forwarded link never tells a stranger where an animal
+  // sleeps. Querying `reports` directly (as this page used to) always came
+  // back empty for a logged-out visitor, which is why every share showed the
+  // generic card.
+  var VIEW = '/rest/v1/public_reports';
+
+  // Most of these links are forwarded through WhatsApp in Cairo, so the
+  // person opening one is more likely reading Arabic than English.
+  var ar = /^ar\b/i.test(navigator.language || '');
+
   var needText = {
     food: ['needs food', 'يحتاج طعامًا'], water: ['needs water', 'يحتاج ماءً'],
     medical: ['needs medical help', 'يحتاج علاجًا'], rescue: ['needs rescue', 'يحتاج إنقاذًا'],
-    shelter: ['needs shelter', 'يحتاج مأوى'], mother_puppies: ['a mum and her pups need help', 'أم وصغارها تحتاج مساعدة']
+    shelter: ['needs shelter', 'يحتاج مأوى'],
+    mother_puppies: ['is a mum with pups', 'أم مع صغارها']
   };
-  var statusText = { reported: 'Needs help', confirmed: 'Needs help', in_progress: 'Help underway',
-                     resolved: 'Rescued', adopted: 'Adopted', cancelled: 'Closed' };
+  var kindText = {
+    cat: ['This cat', 'هذه القطة'], dog: ['This dog', 'هذا الكلب'],
+    other: ['This animal', 'هذا الحيوان']
+  };
+  var statusText = {
+    reported: ['Needs help', 'يحتاج مساعدة'], confirmed: ['Needs help', 'يحتاج مساعدة'],
+    in_progress: ['Help underway', 'المساعدة جارية'], resolved: ['Rescued', 'تم إنقاذه'],
+    adopted: ['Adopted', 'تم تبنّيه'], cancelled: ['Closed', 'مغلق']
+  };
+  // Rescued and adopted are good news; the pill should not shout orange.
+  var statusTone = { resolved: '#2E7D32', adopted: '#2E7D32', in_progress: '#C99536' };
+
+  function t(pair, fallback) { return (pair || fallback)[ar ? 1 : 0]; }
+
+  if (ar) {
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+    document.getElementById('open').textContent = 'افتح في Spot a Paw';
+    document.querySelector('.ract .btn-nile').textContent = 'حمّل التطبيق — مجانًا';
+    document.getElementById('headline').textContent = 'كف يحتاج مساعدتك';
+    document.getElementById('meta').textContent =
+      'حد قريب رصد حيوان شارع محتاج مساعدة. افتحه في التطبيق عشان تشوف مكانه وتساعد.';
+    document.querySelector('.rhero b').textContent = 'يحتاج مساعدة';
+    document.querySelector('.rhero span').textContent = 'مرصود على خريطة الإنقاذ';
+    document.querySelector('.rfoot').innerHTML =
+      'Spot a Paw هي خريطة إنقاذ حيوانات الشارع — الذراع التقني لـ ' +
+      '<a href="/">One Tail One Meal</a>. مجاني، للأبد.';
+  }
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
     return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
   if (!id) return;
 
-  fetch(SB + '/rest/v1/reports?select=title,description,media_url,image_url,media_type,poster_url,paw_type,category,status,created_at&id=eq.' + encodeURIComponent(id),
-        { headers: { apikey: KEY, Authorization: 'Bearer ' + KEY } })
+  fetch(SB + VIEW + '?select=title,description,media_url,image_url,media_type,poster_url,paw_type,category,status,created_at&id=eq.' + encodeURIComponent(id),
+        { headers: { apikey: KEY } })
     .then(function (r) { return r.json(); })
     .then(function (rows) {
       var r = rows && rows[0];
       if (!r) return;                       // stays on the generic card
       var photo = (r.media_type === 'video' ? (r.poster_url || r.image_url) : (r.media_url || r.image_url)) || '';
-      var need = (needText[r.category] || ['needs help'])[0];
-      var kind = r.paw_type === 'cat' ? 'This cat' : r.paw_type === 'dog' ? 'This dog' : 'This animal';
-      document.getElementById('headline').textContent = r.title && r.title.trim() ? r.title : (kind + ' ' + need);
-      document.getElementById('meta').textContent = kind + ' ' + need + ' · reported on Spot a Paw';
+      var need = t(needText[r.category], ['needs help', 'يحتاج مساعدة']);
+      var kind = t(kindText[r.paw_type], kindText.other);
+      var line = kind + ' ' + need;
+      document.getElementById('headline').textContent =
+        (r.title && r.title.trim()) ? r.title : line;
+      document.getElementById('meta').textContent =
+        ar ? (line + ' · مرصود على Spot a Paw') : (line + ' · reported on Spot a Paw');
       document.getElementById('desc').textContent = r.description || '';
       var m = document.getElementById('media');
-      var pill = statusText[r.status] || 'Needs help';
+      var pill = t(statusText[r.status], statusText.reported);
+      var tone = statusTone[r.status];
       if (photo) {
-        m.innerHTML = '<img alt="" src="' + esc(photo) + '"><span class="rpill">' + esc(pill) + '</span>';
+        m.innerHTML = '<img alt="" src="' + esc(photo) + '"><span class="rpill"' +
+          (tone ? ' style="background:' + tone + '"' : '') + '>' + esc(pill) + '</span>';
         m.classList.add('on');
         document.getElementById('hero').style.display = 'none';
+      } else {
+        document.querySelector('.rhero b').textContent = pill;
       }
       document.title = document.getElementById('headline').textContent + ' — Spot a Paw';
     })
