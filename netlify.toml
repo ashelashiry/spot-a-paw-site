@@ -19,3 +19,16 @@
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Apple fetches this file through its CDN and requires JSON content-type.
+# The file has no extension, so Netlify would otherwise serve octet-stream
+# and iOS would silently refuse to register the associated domain.
+[[headers]]
+  for = "/.well-known/apple-app-site-association"
+  [headers.values]
+    Content-Type = "application/json"
+
+[[headers]]
+  for = "/.well-known/assetlinks.json"
+  [headers.values]
+    Content-Type = "application/json"
