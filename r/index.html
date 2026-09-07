@@ -109,7 +109,8 @@
   // Rescued and adopted are good news; the pill should not shout orange.
   var statusTone = { resolved: '#2E7D32', adopted: '#2E7D32', in_progress: '#C99536' };
 
-  function t(pair, fallback) { return (pair || fallback)[ar ? 1 : 0]; }
+  // NB: not `t` -- a `var t` further down this same scope would clobber it.
+  function pick(pair, fallback) { return (pair || fallback)[ar ? 1 : 0]; }
 
   if (ar) {
     document.documentElement.lang = 'ar';
@@ -138,8 +139,8 @@
       var r = rows && rows[0];
       if (!r) return;                       // stays on the generic card
       var photo = (r.media_type === 'video' ? (r.poster_url || r.image_url) : (r.media_url || r.image_url)) || '';
-      var need = t(needText[r.category], ['needs help', 'يحتاج مساعدة']);
-      var kind = t(kindText[r.paw_type], kindText.other);
+      var need = pick(needText[r.category], ['needs help', 'يحتاج مساعدة']);
+      var kind = pick(kindText[r.paw_type], kindText.other);
       var line = kind + ' ' + need;
       document.getElementById('headline').textContent =
         (r.title && r.title.trim()) ? r.title : line;
@@ -147,7 +148,7 @@
         ar ? (line + ' · مرصود على Spot a Paw') : (line + ' · reported on Spot a Paw');
       document.getElementById('desc').textContent = r.description || '';
       var m = document.getElementById('media');
-      var pill = t(statusText[r.status], statusText.reported);
+      var pill = pick(statusText[r.status], statusText.reported);
       var tone = statusTone[r.status];
       if (photo) {
         m.innerHTML = '<img alt="" src="' + esc(photo) + '"><span class="rpill"' +
@@ -159,11 +160,12 @@
       }
       document.title = document.getElementById('headline').textContent + ' — Spot a Paw';
     })
-    .catch(function () {});                 // the generic card is the fallback
+    .catch(function (e) {                   // the generic card is the fallback
+      if (window.console) console.warn('share card:', e);
+    });
 
-  // If the app is installed, the custom scheme takes over; otherwise we stay here.
-  var t = setTimeout(function () {}, 1200);
-  window.addEventListener('pagehide', function () { clearTimeout(t); });
+  // If the app is installed the custom scheme takes over; otherwise the
+  // visitor simply stays on this page, which is the right fallback.
 })();
 </script>
 </body>
