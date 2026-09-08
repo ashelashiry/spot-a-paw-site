@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>One Tail One Meal — لأن كل ذيل يستاهل وجبة</title>
+<meta name="description" content="One Tail One Meal فكرة: أكل دافي لحيوانات الشارع في مصر. بتبدأ بخريطة مجانية بتقول هما فين. الخريطة دي اسمها Spot a Paw، وشغالة دلوقتي.">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="ar" href="index-ar.html">
+<meta property="og:title" content="One Tail One Meal">
+<meta property="og:description" content="فكرة بتبدأ بخريطة. لأن كل ذيل يستاهل وجبة.">
+<meta property="og:image" content="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/otom_mark_v1.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/otom_mark_v1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/otom.css">
+<style>
+  body{font-family:'Cairo','Inter',system-ui,sans-serif}
+  h1,h2,h3,.brand,.eyebrow{font-family:'Cairo','Bricolage Grotesque',sans-serif}
+  .eyebrow{letter-spacing:0}
+  /* The rule that draws the eyebrow's little dash uses ::before, which in RTL
+     lands on the right on its own. Nothing to flip. */
+  .lang-switch{display:inline-flex;gap:.4rem;align-items:center;background:rgba(242,235,221,.12);
+               border:1px solid rgba(242,235,221,.3);border-radius:999px;padding:.3rem .5rem}
+  .lang-switch a{color:var(--ivory);text-decoration:none;font-weight:700;font-size:.86rem;
+                 padding:.28rem .7rem;border-radius:999px;opacity:.75}
+  .lang-switch a.on{background:var(--orange);color:#fff;opacity:1}
+  /* The truth callout's accent bar is on the left in LTR; in RTL it belongs on
+     the reading edge or it looks like a stray line at the end of the sentence. */
+  .truth{border-left:0;border-right:4px solid var(--orange)}
+  ul.plain li{padding-left:0;padding-right:1.5rem}
+  ul.plain li::before{left:auto;right:0}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index-ar.html"><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/otom_mark_v1.png" alt="One Tail One Meal"> One Tail One Meal</a>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="#idea">الفكرة</a>
+      <a href="#first-step">أول خطوة</a>
+      <a href="#help">إزاي تساعد</a>
+      <a href="#contact">اتواصل</a>
+      <span class="lang-switch"><a href="index.html">EN</a><a class="on" href="index-ar.html">ع</a></span>
+      <a class="btn btn-orange btn-sm" href="https://spot-a-paw.com/index-ar.html">افتح الخريطة</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">فكرة، لسه بتتبني</span>
+      <h1>لأن كل ذيل يستاهل <span class="accent">وجبة</span>.</h1>
+      <p class="lead">في مصر ملايين من حيوانات الشارع، ومحدش بيعدّهم.
+        One Tail One Meal عايزة تطعمهم. لسه معملتش كده — ولا وجبة واحدة.
+        اللي عندها هو أول خطوة حقيقية، وشغالة فعلاً: خريطة مجانية بتقول
+        الذيول الجعانة فين.</p>
+      <div class="hero-cta">
+        <a class="btn btn-orange" href="#first-step">شوف أول خطوة</a>
+        <a class="btn btn-ghost" href="#idea">الفكرة إيه</a>
+      </div>
+      <p class="hero-note">لا عربية لسه، لا موظفين، ولا دخل. خريطة بس، واللي عايز يساعد يملاها.</p>
+    </div>
+    <div>
+      <div class="globe-mark" role="img" aria-label="One Tail One Meal">
+        <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
+        <div class="globe-shadow"></div>
+        <div class="globe"><canvas id="globe3d"></canvas></div>
+        <img class="plate-front" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="papyrus" id="start">
+  <div class="wrap origin reveal">
+    <span class="eyebrow">الحكاية بدأت منين</span>
+    <h2>شخص واحد، حاسس إنه مش قادر يعمل حاجة.</h2>
+    <blockquote>«أنا وشريكي دايمًا قلقانين على حيوانات الشارع، وبنتكلم كتير
+      إزاي نطعم ونهتم بالذيول الجعانة.»</blockquote>
+    <blockquote>«أنا مصري-أسترالي، وكل ما أفكر في الكلاب والقطط المنسية في مصر
+      أحس إني مش قادر أعمل حاجة.»</blockquote>
+    <p class="muted">دي كل الحكاية. مش مؤسسة ليها تاريخ — شخص في الناحية التانية
+      من الدنيا مش قادر يبطّل تفكير، وقرر يبني أصغر حاجة مفيدة بدل ما يستنى
+      لحد ما يقدر يبني الحاجة الكبيرة.</p>
+  </div>
+</section>
+
+<section id="idea" class="nile-bg">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">الفكرة</span>
+      <h2>مطبخ على عجل بيحوّل الفاضل لوجبات.</h2>
+      <p class="lead">الجزارين بيرموا لحمة وعضم كل يوم. وحيوانات الشارع بتجوع كل
+        يوم. الفكرة عربية بتقفل المسافة بين الجملتين دول.</p>
+    </div>
+    <div class="grid g3 steps">
+      <div class="card deep step reveal">
+        <h3>نجمع</h3>
+        <p class="muted">نقف عند الجزارين وناخد الفراخ واللحمة والعضم الفاضل اللي
+          كان هيترمي.</p>
+      </div>
+      <div class="card deep step reveal">
+        <h3>نطبخ</h3>
+        <p class="muted">نطبخه بأمان في بوتاجاز مركّب جوه العربية، عشان اللي يتقدّم
+          يبقى أكل نضيف ودافي مش بواقي.</p>
+      </div>
+      <div class="card deep step reveal">
+        <h3>نقدّم</h3>
+        <p class="muted">نقدّمه في أطباق صديقة للبيئة معمولة من الخضار — تتاكل،
+          فمفيش حاجة بتفضل في الشارع.</p>
+      </div>
+    </div>
+    <div class="truth reveal">
+      <p><strong>لسه مفيش حاجة من ده موجودة.</strong> مفيش عربية، ولا بوتاجاز، ولا
+        خط سير، ولا فريق. لو قلنا غير كده هنخسر الحاجة الوحيدة اللي عندنا، وهي إن
+        كل كلمة هنا صح.</p>
+    </div>
+  </div>
+</section>
+
+<section class="papyrus">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">ليه خريطة الأول ومش عربية</span>
+      <h2>الخريطة هي النسخة الرخيصة من العربية.</h2>
+      <p class="lead">تشتري عربية، وتركّب مطبخ، وتشغّل حد يسوقها — وبعدين بس تعرف
+        أنهي شوارع محتاجاها فعلاً. أو تعرف الأول، بتمن فاتورة موبايل، عن طريق
+        الناس اللي أصلاً بتطعم في الشارع.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card reveal">
+        <h3>تمن إنك تخمّن بعربية</h3>
+        <p class="muted">عربية، وتصريح، وبوتاجاز، وبنزين، ومرتب — قبل ما تتقدّم ولا
+          وجبة واحدة، وقبل ما حد يعرف لو خط السير ده صح أصلاً. الهدف المعلن لأول
+          عربية هو <strong>٨٬٠٠٠ دولار</strong>.</p>
+      </div>
+      <div class="card reveal">
+        <h3>تمن إنك تتعلّم بخريطة</h3>
+        <p class="muted">حوالي <strong>٣٦ دولار في الشهر</strong> سيرفرات وخرايط.
+          زيارة دكتور بيطري واحدة. لو الخريطة اتملت، العربية يبقى ليها سبب وخط سير.
+          ولو ماتملتش، مصرفناش حاجة عشان نعرف.</p>
+      </div>
+    </div>
+    <p class="muted foot-note reveal">ده الترتيب، ومش هيتقلب: النتيجة الأول، وبعدين
+      الطلب. الفلوس اللي بتتجمع على فكرة هي فلوس مش هتقدر تجمعها بعدين على نتيجة.</p>
+  </div>
+</section>
+
+<section id="first-step" class="nile-bg" style="background:var(--deep)">
+  <div class="wrap ship">
+    <div class="reveal">
+      <span class="eyebrow">أول خطوة — ودي حقيقية</span>
+      <h2>Spot a Paw.</h2>
+      <p class="lead">تطبيق مجاني وخريطة لحيوانات الشارع في مصر. أي حد يشوف كلب أو
+        قطة في مشكلة يحدد مكانها في ثواني — صورة، ومكان، وإيه اللي حصل. والمنقذين
+        والأطباء والملاجئ القريبين يشوفوها فورًا ويقدروا يقولوا «أنا جاي».</p>
+      <p class="lead">دي الحتة اللي مش خطة. اتعملت، وبالعربي والإنجليزي، وتقدر
+        تستخدمها النهاردة.</p>
+      <ul class="plain">
+        <li><b>حالة ما بتضيعش في السكرول.</b> البوست على فيسبوك بيروح في ساعة. الكف
+          بيفضل لحد ما حد يقول اتنقذ.</li>
+        <li><b>أماكن التغذية.</b> الأماكن اللي الناس بتطعم فيها أصلاً، على الخريطة —
+          عشان الجولة تتخطط مش تتفكّر.</li>
+        <li><b>كل حيوان بنتابعه لحد البيت.</b> اترصد، في الطريق، اتنقذ، اتبنّى.</li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn btn-orange" href="https://spot-a-paw.com/index-ar.html">افتح Spot a Paw ←</a>
+      </div>
+    </div>
+    <div class="reveal phone-wrap">
+      <div class="phone"><div class="notch"></div><div class="screen">
+        <img class="on" src="assets/screens/map_1.png" alt="خريطة Spot a Paw وعليها أكف في القاهرة">
+        <img src="assets/screens/feed_1_all.png" alt="صفحة أكف وذيول">
+        <img src="assets/screens/help_1_status.png" alt="حالة إنقاذ جارية">
+        <img src="assets/screens/feeding_spots.png" alt="أماكن التغذية">
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="help" class="papyrus">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">إزاي تساعد</span>
+      <h2>بالترتيب اللي بيفيد فعلاً.</h2>
+      <p class="lead">أول اتنين مجانيين، وأهم من التالت. ودي مش تواضع — خريطة محدش
+        بيرد عليها أوحش من إن مفيش خريطة خالص.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal">
+        <span class="rank">٠١</span>
+        <h3>حط كف على الخريطة</h3>
+        <p class="muted">لو انت في القاهرة وشفت حيوان محتاج مساعدة، حدد مكانه. بياخد
+          ثواني ومش بيكلّف حاجة. كل كف بيخلي خريطة اللي بعدك أقل فضا.</p>
+        <p><a class="btn btn-nile btn-sm" href="https://spot-a-paw.com/index-ar.html">حمّل التطبيق</a></p>
+      </div>
+      <div class="card reveal">
+        <span class="rank">٠٢</span>
+        <h3>رُدّ على كف</h3>
+        <p class="muted">دي اللي محتاجينها بجد. لو انت أصلاً بتنقذ، أو بتستضيف، أو
+          عندك ملجأ، أو دكتور بيطري، أو بتطعم شارع كل ليلة — اطلب حساب منقذ أو
+          ملجأ وكون انت اللي على الطرف التاني للكف.</p>
+        <p><a class="btn btn-nile btn-sm" href="mailto:support@spot-a-paw.com?subject=%D8%AD%D8%B3%D8%A7%D8%A8%20%D9%85%D9%86%D9%82%D8%B0">اطلب حساب</a></p>
+      </div>
+      <div class="card reveal">
+        <span class="rank">٠٣</span>
+        <h3>ادّي وقت</h3>
+        <p class="muted">التطوع مع One Tail One Meal تجربة حلوة. ساعدنا في الأفكار،
+          والتنفيذ، والوصول للناس. وتنظيم حملة تبرع بالأكل بيتحسب برضه.</p>
+        <p><a class="btn btn-nile btn-sm" href="mailto:support@spot-a-paw.com?subject=%D8%AA%D8%B7%D9%88%D8%B9">كلّمنا</a></p>
+      </div>
+    </div>
+
+    <div class="money reveal">
+      <h3>وبالنسبة للفلوس — بصراحة.</h3>
+      <p class="muted">في حملة على GoFundMe، وهدفها <strong>٨٬٠٠٠ دولار</strong>:
+        تصاريح، وأول عربية طعام، ومرتب لواحد من البلد بيحب الحيوانات يسوقها. الحملة
+        حقيقية ومفتوحة. بس هي للعربية، والعربية جاية بعدين. دلوقتي تكلفة تشغيل
+        الخريطة متغطية شخصيًا، وأنفع حاجة أي حد يقدمها هي كف أو ردّ، مش جنيه.</p>
+      <p><a class="btn btn-ghost dark" href="https://gofund.me/07169802d" target="_blank" rel="noopener">شوف الحملة</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="nile-bg">
+  <div class="wrap grid g2" style="align-items:center">
+    <div class="reveal">
+      <span class="eyebrow">اتواصل</span>
+      <h2>قول حاجة.</h2>
+      <p class="lead">خصوصًا لو عندك جروب إنقاذ أو ملجأ أو عيادة في القاهرة — دي
+        المحادثة اللي محتاجينها أكتر حاجة.</p>
+      <p><a class="btn btn-orange" href="mailto:support@spot-a-paw.com">support@spot-a-paw.com</a></p>
+    </div>
+    <div class="reveal socials">
+      <a href="https://www.instagram.com/onetailonemeal" target="_blank" rel="noopener">إنستجرام</a>
+      <a href="https://www.tiktok.com/@OneTailOneMeal" target="_blank" rel="noopener">تيك توك</a>
+      <a href="https://www.x.com/OneTailOneMeal" target="_blank" rel="noopener">إكس</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index-ar.html" style="margin-bottom:.8rem"><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/otom_mark_v1.png" alt=""> One Tail One Meal</a>
+      <p>لأن كل ذيل يستاهل وجبة. فكرة من سيدني، لشوارع القاهرة، بتبدأ بخريطة.</p>
+    </div>
+    <div>
+      <h4>الموقع</h4>
+      <ul>
+        <li><a href="#idea">الفكرة</a></li>
+        <li><a href="#first-step">أول خطوة</a></li>
+        <li><a href="#help">إزاي تساعد</a></li>
+        <li><a href="#contact">اتواصل</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Spot a Paw</h4>
+      <ul>
+        <li><a href="https://spot-a-paw.com/index-ar.html">التطبيق</a></li>
+        <li><a href="https://spot-a-paw.com/help-ar.html">مركز المساعدة</a></li>
+        <li><a href="https://spot-a-paw.com/privacy.html">الخصوصية</a></li>
+      </ul>
+    </div>
+    <p class="copy">© ٢٠٢٦ One Tail One Meal. مفيش حاجة في الصفحة دي بتوصف حاجة موجودة إلا لو قالت كده.</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  var canvas = document.getElementById('globe3d');
+  if (!canvas || !window.THREE) return;
+  var holder = canvas.parentElement;
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true }); }
+  catch (e) { return; }
+  holder.classList.add('gl');
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.toneMapping = THREE.NoToneMapping;
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
+  camera.position.set(0, 0, 3.9);
+  var tex = new THREE.TextureLoader().load('assets/globe_equirect.png', function (t) {
+    t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    t.needsUpdate = true;
+  });
+  var globe = new THREE.Mesh(
+    new THREE.SphereGeometry(1, 96, 96),
+    new THREE.MeshBasicMaterial({ map: tex })
+  );
+  globe.rotation.order = 'ZYX';
+  globe.rotation.z = 0.32;
+  globe.rotation.y = THREE.MathUtils.degToRad(240);
+  scene.add(globe);
+  function size() {
+    var s = holder.clientWidth || 120;
+    renderer.setSize(s, s, false);
+    camera.aspect = 1; camera.updateProjectionMatrix();
+  }
+  size(); window.addEventListener('resize', size);
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var visible = true;
+  new IntersectionObserver(function (es) { es.forEach(function (e) { visible = e.isIntersecting; }); }).observe(holder);
+  var last = 0;
+  function frame(t) {
+    requestAnimationFrame(frame);
+    if (!visible) return;
+    var dt = Math.min(0.05, (t - last) / 1000 || 0); last = t;
+    if (!reduce) globe.rotation.y += dt * 0.28;
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

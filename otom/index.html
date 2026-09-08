@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- PREVIEW ONLY. This lives under spot-a-paw.com/otom/ so Ash can open it
-     on a phone before anything touches the onetailonemeal.com DNS. Kept
-     out of search until it is the real site. -->
+<!-- PREVIEW. Lives at spot-a-paw.com/otom/ so it can be opened on a phone
+     before anything touches the onetailonemeal.com DNS. Remove this line
+     the day it becomes the real site. -->
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>One Tail One Meal — because every tail deserves a meal</title>
@@ -19,6 +19,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/otom.css">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="ar" href="index-ar.html">
+<style>
+  .lang-switch{display:inline-flex;gap:.4rem;align-items:center;background:rgba(242,235,221,.12);
+               border:1px solid rgba(242,235,221,.3);border-radius:999px;padding:.3rem .5rem}
+  .lang-switch a{color:var(--ivory);text-decoration:none;font-weight:700;font-size:.86rem;
+                 padding:.28rem .7rem;border-radius:999px;opacity:.75}
+  .lang-switch a.on{background:var(--orange);color:#fff;opacity:1}
+</style>
 </head>
 <body>
 
@@ -31,6 +40,7 @@
       <a href="#first-step">The first step</a>
       <a href="#help">How to help</a>
       <a href="#contact">Contact</a>
+      <span class="lang-switch"><a class="on" href="index.html">EN</a><a href="index-ar.html">ع</a></span>
       <a class="btn btn-orange btn-sm" href="https://spot-a-paw.com">Open the map</a>
     </div>
   </div>
