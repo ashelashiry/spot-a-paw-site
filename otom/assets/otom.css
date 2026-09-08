@@ -1,0 +1,83 @@
+/* One Tail One Meal — the few things this site needs that Spot a Paw's
+   stylesheet doesn't already carry. Everything else is site.css verbatim, on
+   purpose: the two properties should read as one hand. */
+
+/* The hero here is a mark, not a phone, so it wants a narrower text column.
+   MUST be inside the media query: otom.css loads after site.css, so a bare
+   rule here would beat site.css's own max-width:900px collapse and the mark
+   would hang off the side of every phone. It did, until this was scoped. */
+@media (min-width: 901px) {
+  .hero .wrap { grid-template-columns: 1.15fr .85fr; }
+}
+.hero .globe-mark { width: min(400px, 80vw); }
+@media (max-width: 900px) {
+  .hero .globe-mark { width: min(320px, 68vw); margin-top: 1.5rem; }
+}
+
+/* The origin note. It was a two-column layout with the mark repeated on the
+   right, three hundred pixels below the same mark in the hero -- which read as
+   a template with a hole in it rather than a decision. One centred column, and
+   the two sentences that are actually the reason any of this exists. */
+.origin { max-width: 46rem; text-align: center; }
+.origin .eyebrow { justify-content: center; }
+.origin blockquote {
+  margin: 1.6rem 0; font-family: var(--display); font-weight: 500; font-style: normal;
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem); line-height: 1.45; color: var(--nile);
+}
+.origin .muted { max-width: 60ch; margin: 2rem auto 0; }
+
+/* The three steps of the van idea. site.css numbers .step from a counter and
+   indents for it; inside a card that reads as a hole, so reset the indent and
+   let the numeral sit above the heading instead. */
+.steps .card.step { padding-left: 1.6rem; }
+.steps .card.step::before { position: static; display: block; font-size: 1.9rem; line-height: 1; margin-bottom: .5rem; }
+
+/* The paragraph that says the van doesn't exist. It has to be impossible to
+   skim past, which is the entire reason this site is being rewritten. */
+.truth {
+  margin-top: 2.5rem; padding: 1.4rem 1.6rem; border-radius: var(--radius-s);
+  border-left: 4px solid var(--orange); background: rgba(255, 121, 0, .10);
+}
+.truth p { margin: 0; color: rgba(242, 235, 221, .92); }
+.truth strong { color: var(--orange); }
+
+.foot-note { margin-top: 2rem; max-width: 65ch; }
+
+/* Ranked help cards: the numeral is the point — 01 free, 03 money. */
+.rank {
+  display: block; font-family: var(--display); font-weight: 800; font-size: 2rem;
+  line-height: 1; color: var(--orange); opacity: .55; margin-bottom: .5rem;
+}
+
+/* The money block, deliberately quieter than the three cards above it. */
+.money {
+  margin-top: 2.5rem; padding: 2rem; border-radius: var(--radius);
+  background: var(--nile); color: var(--ivory);
+}
+.money h3 { color: var(--ivory); }
+.money .muted { color: rgba(242, 235, 221, .8); max-width: 70ch; }
+.money strong { color: var(--orange); }
+.btn-ghost.dark { color: var(--ivory); border-color: rgba(242, 235, 221, .45); }
+
+/* Bulleted list without the browser's default indent fighting the grid. */
+ul.plain { list-style: none; padding: 0; margin: 1.2rem 0; }
+ul.plain li { margin: .7rem 0; padding-left: 1.5rem; position: relative; color: rgba(242, 235, 221, .82); }
+ul.plain li::before { content: "—"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+ul.plain b { color: var(--ivory); }
+
+.socials { display: flex; flex-wrap: wrap; gap: .8rem; }
+.socials a {
+  padding: .8rem 1.3rem; border-radius: 999px; text-decoration: none; font-weight: 700;
+  border: 2px solid rgba(242, 235, 221, .35); color: var(--ivory);
+}
+.socials a:hover { background: rgba(242, 235, 221, .1); }
+
+/* footer's 2fr 1fr 1fr assumes three columns of links; this site has three too,
+   but the brand block needs room to breathe under it. */
+footer .brand { font-size: 1.05rem; }
+footer .brand img { height: 34px; }
+
+/* The help cards carry a button each; without this the shortest card's button
+   sits higher than its neighbours' and the row reads as broken. */
+#help .grid .card { display: flex; flex-direction: column; }
+#help .grid .card p:last-child { margin-top: auto; margin-bottom: 0; padding-top: 1rem; }

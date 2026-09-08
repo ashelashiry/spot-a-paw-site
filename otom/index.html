@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- PREVIEW ONLY. This lives under spot-a-paw.com/otom/ so Ash can open it
+     on a phone before anything touches the onetailonemeal.com DNS. Kept
+     out of search until it is the real site. -->
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>One Tail One Meal — because every tail deserves a meal</title>
+<meta name="description" content="One Tail One Meal is an idea: warm food for the street animals of Cairo. It starts with a free map of where they are. That map is Spot a Paw, and it works today.">
+<meta property="og:title" content="One Tail One Meal">
+<meta property="og:description" content="An idea that starts with a map. Because every tail deserves a meal.">
+<meta property="og:image" content="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/otom_mark_v1.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/otom_mark_v1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/otom.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/otom_mark_v1.png" alt="One Tail One Meal"> One Tail One Meal</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="#idea">The idea</a>
+      <a href="#first-step">The first step</a>
+      <a href="#help">How to help</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-orange btn-sm" href="https://spot-a-paw.com">Open the map</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────────────────────────── hero ───────────────────────────── -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">An idea, in progress</span>
+      <h1>Because every tail deserves a <span class="accent">meal</span>.</h1>
+      <p class="lead">There are millions of street animals in Egypt and nobody counts them.
+        One Tail One Meal wants to feed them. It doesn't yet — not a single meal.
+        What it has is a first real step, and it's already working: a free map of where
+        the hungry tails actually are.</p>
+      <div class="hero-cta">
+        <a class="btn btn-orange" href="#first-step">See the first step</a>
+        <a class="btn btn-ghost" href="#idea">What the idea is</a>
+      </div>
+      <p class="hero-note">No van yet. No staff. No income. Just a map, and whoever wants to help fill it.</p>
+    </div>
+    <div>
+      <!-- The mark, with the globe turning in the plate — the same geometry the app's
+           onboarding screen uses. -->
+      <div class="globe-mark" role="img" aria-label="One Tail One Meal">
+        <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
+        <div class="globe-shadow"></div>
+        <div class="globe"><canvas id="globe3d"></canvas></div>
+        <img class="plate-front" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ───────────────────────────── honest note ───────────────────────────── -->
+<section class="papyrus" id="start">
+  <div class="wrap origin reveal">
+    <span class="eyebrow">Where this comes from</span>
+    <h2>One person, feeling useless about it.</h2>
+    <blockquote>“My partner &amp; I have always been concerned about the welfare of stray
+      animals, and we often discuss how to feed and care for hungry tails.”</blockquote>
+    <blockquote>“I am an Egyptian-Australian who always feels helpless when thinking of all
+      the forgotten dogs and cats in Egypt.”</blockquote>
+    <p class="muted">That is the whole origin. Not an organisation with a history — one person
+      on the other side of the world who couldn't stop thinking about it, and decided to build
+      the smallest useful thing rather than wait until the big one was affordable.</p>
+  </div>
+</section>
+
+<!-- ───────────────────────────── the idea ───────────────────────────── -->
+<section id="idea" class="nile-bg">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The idea</span>
+      <h2>A kitchen on wheels that turns waste into meals.</h2>
+      <p class="lead">Butchers throw away meat and bone every day. Street animals go hungry
+        every day. The idea is a van that closes the gap between those two sentences.</p>
+    </div>
+    <div class="grid g3 steps">
+      <div class="card deep step reveal">
+        <h3>Collect</h3>
+        <p class="muted">Stop at local butchers and take the leftover chicken, beef and bones
+          that would otherwise be binned.</p>
+      </div>
+      <div class="card deep step reveal">
+        <h3>Cook</h3>
+        <p class="muted">Cook it safely in a built-in cooker on board, so what gets served is
+          clean, warm food rather than scraps.</p>
+      </div>
+      <div class="card deep step reveal">
+        <h3>Serve</h3>
+        <p class="muted">Serve it on eco-friendly plates made from vegetables — edible, so
+          nothing is left behind on the street.</p>
+      </div>
+    </div>
+    <div class="truth reveal">
+      <p><strong>None of this exists yet.</strong> There is no van, no cooker, no route and
+        no team. Saying otherwise would be the easiest way to lose the only thing this has,
+        which is that everything it tells you is true.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────── why the map first ───────────────────────────── -->
+<section class="papyrus">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why a map and not a van</span>
+      <h2>The map is the cheap version of the van.</h2>
+      <p class="lead">Buy a vehicle, fit a kitchen, hire someone to drive it — and only then
+        find out which streets actually need it. Or find out first, for the price of a phone
+        bill, using the people who are already out there feeding.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card reveal">
+        <h3>What a van costs to guess with</h3>
+        <p class="muted">A vehicle, a permit, a cooker, fuel, and a wage — before a single
+          meal is served, and before anyone knows whether the route is the right one.
+          The published goal for that first truck is <strong>$8,000</strong>.</p>
+      </div>
+      <div class="card reveal">
+        <h3>What the map costs to learn with</h3>
+        <p class="muted">About <strong>$36 a month</strong> in servers and map calls. One vet
+          visit. If the map fills in, the van has a reason and a route. If it doesn't,
+          nothing was spent finding that out.</p>
+      </div>
+    </div>
+    <p class="muted foot-note reveal">This is the order, and it isn't going to be reversed:
+      results first, then the ask. Money raised against an idea is money you can't raise
+      later against a result.</p>
+  </div>
+</section>
+
+<!-- ───────────────────────────── spot a paw ───────────────────────────── -->
+<section id="first-step" class="nile-bg" style="background:var(--deep)">
+  <div class="wrap ship">
+    <div class="reveal">
+      <span class="eyebrow">The first step — and it's real</span>
+      <h2>Spot a Paw.</h2>
+      <p class="lead">A free app and a map for the street animals of Egypt. Anyone who sees a
+        dog or a cat in trouble drops a pin in seconds — a photo, a place, what's wrong.
+        Rescuers, vets and shelters nearby see it immediately and can say “I'm on my way.”</p>
+      <p class="lead">This is the part that isn't a plan. It's built, it's in Arabic and
+        English, and you can use it today.</p>
+      <ul class="plain">
+        <li><b>A case that doesn't scroll away.</b> A Facebook post is gone in an hour. A pin
+          stays until somebody marks it rescued.</li>
+        <li><b>Feeding spots.</b> The places people already feed, mapped — so a round can be
+          planned instead of remembered.</li>
+        <li><b>Every animal is followed home.</b> Spotted, on the way, rescued, adopted.</li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn btn-orange" href="https://spot-a-paw.com">Open Spot a Paw →</a>
+      </div>
+    </div>
+    <div class="reveal phone-wrap">
+      <div class="phone"><div class="notch"></div><div class="screen">
+        <img class="on" src="assets/screens/map_1.png" alt="The Spot a Paw map, showing paws dropped across Cairo">
+        <img src="assets/screens/feed_1_all.png" alt="The Paws and Tails feed">
+        <img src="assets/screens/help_1_status.png" alt="A rescue in progress">
+        <img src="assets/screens/feeding_spots.png" alt="Feeding spots">
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────── help ───────────────────────────── -->
+<section id="help" class="papyrus">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How to help</span>
+      <h2>In the order that actually helps.</h2>
+      <p class="lead">The first two are free and matter more than the third. That is not
+        modesty — a map nobody answers is worse than no map at all.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal">
+        <span class="rank">01</span>
+        <h3>Put a paw on the map</h3>
+        <p class="muted">If you're in Cairo and you see an animal that needs help, drop a pin.
+          It takes seconds and it costs nothing. Every pin makes the next person's map
+          less empty.</p>
+        <p><a class="btn btn-nile btn-sm" href="https://spot-a-paw.com">Get the app</a></p>
+      </div>
+      <div class="card reveal">
+        <span class="rank">02</span>
+        <h3>Answer one</h3>
+        <p class="muted">This is the one that's genuinely needed. If you already rescue, foster,
+          run a shelter, practise as a vet, or feed a street every evening — ask for a Rescuer
+          or Shelter account and be the person on the other end of a pin.</p>
+        <p><a class="btn btn-nile btn-sm" href="mailto:support@spot-a-paw.com?subject=Rescuer%20account">Ask for an account</a></p>
+      </div>
+      <div class="card reveal">
+        <span class="rank">03</span>
+        <h3>Give time</h3>
+        <p class="muted">“Volunteering your time at One Tail One Meal is a rewarding experience.
+          Help us with ideation, execution and reaching people.” Hosting a food drive counts too.</p>
+        <p><a class="btn btn-nile btn-sm" href="mailto:support@spot-a-paw.com?subject=Volunteering">Say hello</a></p>
+      </div>
+    </div>
+
+    <div class="money reveal">
+      <h3>And money — honestly.</h3>
+      <p class="muted">There is a GoFundMe, and its goal is <strong>$8,000</strong>: permits,
+        the first food truck, and a wage for a local animal lover to drive it. It's real and
+        it's open. But it's for the van, and the van comes second. Right now the running cost
+        of the map is covered personally, and the most useful thing anyone can give is a pin
+        or an answer, not a pound.</p>
+      <p><a class="btn btn-ghost dark" href="https://gofund.me/07169802d" target="_blank" rel="noopener">See the GoFundMe</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────────── contact ───────────────────────────── -->
+<section id="contact" class="nile-bg">
+  <div class="wrap grid g2" style="align-items:center">
+    <div class="reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>Say something.</h2>
+      <p class="lead">Especially if you run a rescue group, a shelter or a clinic in Cairo —
+        that's the conversation this needs most.</p>
+      <p><a class="btn btn-orange" href="mailto:support@spot-a-paw.com">support@spot-a-paw.com</a></p>
+    </div>
+    <div class="reveal socials">
+      <a href="https://www.instagram.com/onetailonemeal" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@OneTailOneMeal" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.x.com/OneTailOneMeal" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html" style="margin-bottom:.8rem"><img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/otom_mark_v1.png" alt=""> One Tail One Meal</a>
+      <p>Because every tail deserves a meal. An idea from Sydney, for the streets of Cairo,
+        starting with a map.</p>
+    </div>
+    <div>
+      <h4>This site</h4>
+      <ul>
+        <li><a href="#idea">The idea</a></li>
+        <li><a href="#first-step">The first step</a></li>
+        <li><a href="#help">How to help</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Spot a Paw</h4>
+      <ul>
+        <li><a href="https://spot-a-paw.com">The app</a></li>
+        <li><a href="https://spot-a-paw.com/help.html">Help centre</a></li>
+        <li><a href="https://spot-a-paw.com/privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+    <p class="copy">© 2026 One Tail One Meal. Nothing on this page describes something that
+      exists unless it says it does.</p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// The globe turning in the plate — a lit sphere carrying the brand-coloured
+// equirectangular map. Falls back to the CSS map scroll where WebGL is absent.
+(function () {
+  var canvas = document.getElementById('globe3d');
+  if (!canvas || !window.THREE) return;
+  var holder = canvas.parentElement;
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true }); }
+  catch (e) { return; }
+  holder.classList.add('gl');
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.toneMapping = THREE.NoToneMapping;
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
+  camera.position.set(0, 0, 3.9);
+  var tex = new THREE.TextureLoader().load('assets/globe_equirect.png', function (t) {
+    t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    t.needsUpdate = true;
+  });
+  var globe = new THREE.Mesh(
+    new THREE.SphereGeometry(1, 96, 96),
+    new THREE.MeshBasicMaterial({ map: tex })
+  );
+  globe.rotation.order = 'ZYX';
+  globe.rotation.z = 0.32;
+  globe.rotation.y = THREE.MathUtils.degToRad(240);
+  scene.add(globe);
+  function size() {
+    var s = holder.clientWidth || 120;
+    renderer.setSize(s, s, false);
+    camera.aspect = 1; camera.updateProjectionMatrix();
+  }
+  size(); window.addEventListener('resize', size);
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var visible = true;
+  new IntersectionObserver(function (es) { es.forEach(function (e) { visible = e.isIntersecting; }); }).observe(holder);
+  var last = 0;
+  function frame(t) {
+    requestAnimationFrame(frame);
+    if (!visible) return;
+    var dt = Math.min(0.05, (t - last) / 1000 || 0); last = t;
+    if (!reduce) globe.rotation.y += dt * 0.28;
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
