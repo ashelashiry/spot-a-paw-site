@@ -220,6 +220,22 @@ footer{color:var(--muted);font-size:.86rem;padding:2rem 0 3rem}
       <textarea placeholder="What happened?"></textarea>
     </div>
   </div>
+
+  <div class="case" data-p="2">
+    <input type="checkbox">
+    <div>
+      <div class="id">1.4</div>
+      <h4>Six ways to help</h4>
+      <ol>
+          <li>Read the list of ways to help on the onboarding screen.</li>
+          <li>Do it again in Arabic.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> there are <b>six</b>, ending with <b>Share the Offcuts</b> — the butcher one. In Arabic it reads <b>شارك القصاقيص</b>, not the driver text above it.</div>
+      <div class="tags"><span class="tag ar">Arabic</span></div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
 </section>
 
 <!-- ============================================================= -->
@@ -303,6 +319,24 @@ footer{color:var(--muted);font-size:.86rem;padding:2rem 0 3rem}
       <div class="exp"><b>Expect:</b> a helpful message each time. Nothing should crash, and the
         button should never appear to work and then do nothing.</div>
       <div class="tags"><span class="tag p1">Important</span></div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="1">
+    <input type="checkbox">
+    <div>
+      <div class="id">2.6</div>
+      <h4>Butcher is a role you can sign up as</h4>
+      <ol>
+          <li>On the sign-up screen, look at the <b>Log on as / Sign up as</b> row.</li>
+          <li>Pick <b>Butcher</b> and create the account.</li>
+          <li>Open your profile.</li>
+          <li>Repeat the whole thing in Arabic.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> there are <b>six</b> roles and the sixth is Butcher, with a butcher-stall mark like the other five — <b>not a blank space and not a rescuer paw</b>. After signing up, the profile shows Butcher. In Arabic the chip reads <b>جزار</b> and the profile says جزار, not منقذ. Also check the Vet chip still reads <b>بيطري</b> in full and is not cut off.</div>
+      <div class="tags"><span class="tag p1">Important</span><span class="tag ar">Arabic</span></div>
       <label class="flag"><input type="checkbox" class="fl"> Problem</label>
       <textarea placeholder="What happened?"></textarea>
     </div>
@@ -862,6 +896,56 @@ footer{color:var(--muted);font-size:.86rem;padding:2rem 0 3rem}
       <textarea placeholder="What happened?"></textarea>
     </div>
   </div>
+
+  <div class="case" data-p="1">
+    <input type="checkbox">
+    <div>
+      <div class="id">8.6</div>
+      <h4>Take back something you logged by mistake</h4>
+      <ol>
+          <li>On a colony, mark <b>Sterilised</b> (or Microchipped).</li>
+          <li>Open <b>View history</b>.</li>
+          <li>Remove your own entry.</li>
+          <li>From a SECOND account, add an entry, then go back to the first account and open the history again.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> your own entry can be removed and the colony's counts go back down. The other account's entry is visible but has <b>no</b> remove control — you can only take back your own.</div>
+      <div class="tags"><span class="tag p1">Important</span></div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="1">
+    <input type="checkbox">
+    <div>
+      <div class="id">8.7</div>
+      <h4>Only your own toggles, and they toggle off</h4>
+      <ol>
+          <li>Tap <b>Fed today</b>, <b>Seen them</b>, <b>Sterilised</b>, <b>Microchipped</b> on a colony.</li>
+          <li>Tap each one again.</li>
+          <li>Check the same colony from a second account.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> each tap turns the button on and records it; tapping again turns it off and removes it. The second account sees its own buttons off — these are per-person, not per-colony.</div>
+      <div class="tags"><span class="tag p1">Important</span></div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="2">
+    <input type="checkbox">
+    <div>
+      <div class="id">8.8</div>
+      <h4>How far away colonies are</h4>
+      <ol>
+          <li>Open Feeding Spots and change the distance chip (5, 10, 25, 50, 100 km, and everywhere).</li>
+          <li>Watch the list and the distance shown on each card.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> the list shortens and lengthens as you change it, and each colony shows a believable distance from where you are. <b>Everywhere</b> shows all of them.</div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
 </section>
 
 <!-- ============================================================= -->
@@ -908,6 +992,122 @@ footer{color:var(--muted);font-size:.86rem;padding:2rem 0 3rem}
         or find one — not a blank screen.</div>
       <label class="flag"><input type="checkbox" class="fl"> Problem</label>
       <textarea placeholder="What did it say?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="1">
+    <input type="checkbox">
+    <div>
+      <div class="id">9.4</div>
+      <h4>The six badges filter the list</h4>
+      <ol>
+          <li>Open Communities and look at the row of badges at the top.</li>
+          <li>Tap one — say Vet — and watch the list.</li>
+          <li>Tap it again.</li>
+          <li>Turn several off, then use <b>Show all</b>.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> all six start <b>on</b> (Rescuer, Feeder, Vet, Shelter, Driver, Butcher), each with its own artwork — no blanks, and no two badges sharing a picture. Tapping one hides that kind and dims the chip; tapping again brings it back. A line tells you how many badges you are showing, and Show all resets it.</div>
+      <div class="tags"><span class="tag p1">Important</span><span class="tag ar">Arabic</span></div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="2">
+    <input type="checkbox">
+    <div>
+      <div class="id">9.5</div>
+      <h4>Everywhere, or your country</h4>
+      <ol>
+          <li>Switch the second bar between <b>Everywhere</b> and your country.</li>
+          <li>Read the label on the right-hand chip.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> the chip names <b>your actual country</b> (Egypt on an Egyptian phone — in Arabic <b>مصر</b>, not "Egypt"). Everywhere shows all communities; your country shows only the ones there. Neither should be empty — there are communities in Egypt and in Australia.</div>
+      <div class="tags"><span class="tag ar">Arabic</span></div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="1">
+    <input type="checkbox">
+    <div>
+      <div class="id">9.6</div>
+      <h4>Creating one: badge and country are required</h4>
+      <ol>
+          <li>Tap <b>Create community</b>.</li>
+          <li>Try to save with no badge picked, and again with no country.</li>
+          <li>Add a banner image, pick <b>Butcher</b>, pick a country, fill in a phone and an address, and save.</li>
+          <li>Find it in the list and open it.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> it refuses to save without a badge or a country, and says why. The form <b>scrolls</b> — nothing is cut off at the bottom, and the keyboard does not hide the field you are typing in. After saving you are already a member of your own community.</div>
+      <div class="tags"><span class="tag p1">Important</span><span class="tag ar">Arabic</span></div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="2">
+    <input type="checkbox">
+    <div>
+      <div class="id">9.7</div>
+      <h4>Reaching a community</h4>
+      <ol>
+          <li>Open a community that has a phone number, a website or an address (try <b>Zamalek Butchers</b>).</li>
+          <li>Tap <b>Call</b>, then <b>Directions</b>, then the website.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> Call opens the dialler with the number, Directions opens maps at the address, and the website opens. A community with none of these shows no empty buttons.</div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="1">
+    <input type="checkbox">
+    <div>
+      <div class="id">9.8</div>
+      <h4>Telling every member — owners only</h4>
+      <ol>
+          <li>As the <b>creator</b> of a community, write a post and tick <b>Notify the members</b>.</li>
+          <li>From a second account that is a MEMBER but not the creator, write a post and look for the same tick.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> the creator has the option and members' phones get the notification. A plain member <b>does not see the option at all</b>. This one matters: it is the difference between a noticeboard and a loudspeaker anyone can grab.</div>
+      <div class="tags"><span class="tag p1">Important</span></div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="1">
+    <input type="checkbox">
+    <div>
+      <div class="id">9.9</div>
+      <h4>Butcher: meat ready for collection</h4>
+      <ol>
+          <li>Open a butcher community you own (<b>Zamalek Butchers</b>).</li>
+          <li>Tap <b>Meat ready</b>, enter a quantity like "8 kg of offcuts" and a collection window, and post it.</li>
+          <li>Look at the feed from another account in that community.</li>
+          <li>Set a window that has already passed, and look again.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> the offer shows the quantity and how long it is good for, and feeders and drivers in that community are told. An offer past its time is shown as <b>expired rather than deleted</b> — somebody arriving late should see they missed it, not find nothing and wonder.</div>
+      <div class="tags"><span class="tag p1">Important</span><span class="tag ar">Arabic</span></div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
+    </div>
+  </div>
+
+  <div class="case" data-p="2">
+    <input type="checkbox">
+    <div>
+      <div class="id">9.10</div>
+      <h4>What a community card tells you</h4>
+      <ol>
+          <li>Look down the list of communities.</li>
+          <li>Find one with a banner image and one without.</li>
+      </ol>
+      <div class="exp"><b>Expect:</b> every card shows its badge, its area, a description, and how many posts and members it has. A community with no banner gets its badge mark on a tinted tile — <b>never a broken image and never a stray icon that belongs to a different badge</b>.</div>
+      <label class="flag"><input type="checkbox" class="fl"> Problem</label>
+      <textarea placeholder="What happened?"></textarea>
     </div>
   </div>
 </section>
