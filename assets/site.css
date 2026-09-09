@@ -88,6 +88,10 @@ section{padding:5rem 0}
 .muted{color:var(--muted)}
 .icon{width:56px;height:56px;object-fit:contain;margin-bottom:1rem}
 .icon-lg{width:76px;height:76px}
+/* The One Tail One Meal mark on the mission card. Bigger than a role icon
+   because it is a wordmark -- at 56px "ONE TAIL ONE MEAL" is unreadable. */
+.icon-brand{width:110px;height:110px}
+@media (max-width:640px){.icon-brand{width:92px;height:92px}}
 .papyrus{background:linear-gradient(180deg,var(--ivory) 0%,var(--ivory-2) 100%)}
 .nile-bg{background:var(--nile);color:var(--ivory)}
 .nile-bg .lead,.nile-bg .muted{color:rgba(242,235,221,.78)}
