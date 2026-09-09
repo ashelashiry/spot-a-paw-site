@@ -51,3 +51,40 @@
     topics.forEach(tp => spy.observe(tp));
   }
 })();
+
+// The skins rotator. Pauses on hover so a reader can actually look at one,
+// and stops entirely for prefers-reduced-motion rather than merely dropping
+// the fade -- the movement is the thing that would bother someone, not the
+// transition on it.
+(function () {
+  var root = document.querySelector('.skin-rotator');
+  if (!root) return;
+  var slides = [].slice.call(root.querySelectorAll('.skin-slide'));
+  var dots = [].slice.call(root.querySelectorAll('.skin-dot'));
+  var cap = root.querySelector('.skin-cap');
+  if (slides.length < 2) return;
+  var i = 0, timer = null;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function (el, k) { el.classList.toggle('on', k === i); });
+    dots.forEach(function (el, k) { el.classList.toggle('on', k === i); });
+    if (cap) {
+      cap.querySelector('b').textContent = slides[i].dataset.name || '';
+      cap.querySelector('span').textContent = slides[i].dataset.blurb || '';
+    }
+  }
+  function play() { if (!still && !timer) timer = setInterval(function () { show(i + 1); }, 2600); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () { stop(); show(+d.dataset.i); play(); });
+  });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', play);
+  document.addEventListener('visibilitychange', function () {
+    document.hidden ? stop() : play();
+  });
+  show(0); play();
+})();

@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=3304fa7b">
+<link rel="stylesheet" href="assets/site.css?v=f337a010">
 <style>
   body{font-family:'Cairo','Inter',system-ui,sans-serif}
   h1,h2,h3,.brand,.eyebrow{font-family:'Cairo','Bricolage Grotesque',sans-serif}
@@ -69,7 +69,7 @@
       </div>
       <p class="hero-note">على آيفون من TestFlight دلوقتي · أندرويد ومتجر آبل قريب · مجاني، للأبد.</p>
       <div class="hero-stats">
-        <div class="stat"><b>٥</b><span>طرق للمساعدة</span></div>
+        <div class="stat"><b>٨</b><span>طرق للمساعدة</span></div>
         <div class="stat"><b>٢</b><span>مدن والعدد بيزيد</span></div>
         <div class="stat"><b>٠</b><span>إعلانات، أبدًا</span></div>
       </div>
@@ -100,12 +100,12 @@
     </div>
     <div class="grid g2">
       <div class="card nile reveal">
-        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_rescue_o1.png" alt="">
+        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png" alt="">
         <h3>مهمتنا</h3>
         <p class="muted">إن كل حيوان شارع ياخد اللي محتاجه — أكل، مياه، علاج، إنقاذ، بيت — عن طريق ربط اللي بيشوفوه باللي يقدروا يتصرّفوا. مفيش كول سنتر ولا قوائم انتظار. دبوس على خريطة وجار بيهتم.</p>
       </div>
       <div class="card deep reveal">
-        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_map_v1.png" alt="">
+        <div class="globe icon-globe"><canvas class="globe3d"></canvas></div>
         <h3>رؤيتنا</h3>
         <p class="muted">عالم مفيش فيه كف بيعدّي من غير ما حد يشوفه. كل حي وليه منقذينه ومُطعِمينه وسواقينه؛ وكل نقطة إطعام على جولة؛ وكل إنقاذ قصة يفرح بيها حد. البداية من القاهرة وسيدني — ومبني عشان يشتغل في أي مكان فيه حيوان شارع وتليفون.</p>
       </div>
@@ -119,19 +119,47 @@
   </div>
 </section>
 
+<section id="mothership" class="nile-bg" style="background:var(--deep)">
+  <div class="wrap ship">
+    <div class="reveal">
+      <span class="eyebrow">السفينة الأم</span>
+      <h2>Spot a Paw هو أول حاجة اتعملت من One Tail One Meal.</h2>
+      <blockquote>"لأن كل ذيل يستاهل وجبة."</blockquote>
+      <p class="lead">One Tail One Meal فكرة، مش مؤسسة — شخص واحد مش قادر يبطّل تفكير في كلاب وقطط الشارع في مصر. الفكرة: عربات طعام بيسوقها ناس من البلد، بتجمع اللحمة الفاضلة من الجزارين، وبتطبخها بأمان جوه العربية، وبتقدّمها دافية في أطباق تتاكل معمولة من الخضار. لا هدر، لا تلوث، لا بطون فاضية.</p>
+      <p class="lead"><strong>لسه مفيش حاجة من ده موجودة</strong> — لا عربية، لا فريق، ولا دخل. التطبيق ده هو النسخة الرخيصة منها: نعرف الاحتياج فين فعلاً، بتمن فاتورة موبايل، قبل ما حد يشتري عربية ويخمّن.</p>
+      <p class="lead">القاهرة الأول. وبعدين إسكندرية والجيزة، وأي مكان فيه ذيل جعان. وSpot a Paw هو اللي بيخلي العربات — وكل حد مهتم — يعرفوا الذيول فين.</p>
+      <div style="margin:1rem 0 1.4rem"><span class="pill">القاهرة</span><span class="pill">سيدني</span><span class="pill">عربات طعام</span><span class="pill">أطباق تتاكل</span><span class="pill">متطوعين</span></div>
+      <a class="btn btn-orange" href="https://onetailonemeal.com" target="_blank" rel="noopener">زور One Tail One Meal ←</a>
+    </div>
+    <div class="reveal">
+      <!-- The One Tail One Meal mark with the spinning globe — same geometry as the app's SpinningGlobeMark (plate over a rotating map). -->
+      <div class="globe-mark" role="img" aria-label="One Tail One Meal">
+        <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
+        <div class="globe-shadow"></div>
+        <div class="globe"><canvas id="globe3d"></canvas></div>
+        <!-- Same plate again, clipped to its front rim, so the rings pass IN FRONT of the sphere's base: it sits in the well. -->
+        <img class="plate-front" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="how" class="nile-bg">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">إزاي بيشتغل</span>
-      <h2>خمس حاجات تقدر تعملها من أول لحظة تشوف فيها كف.</h2>
+      <h2>تمان طرق تساعد بيها، من أول لحظة تشوف فيها كفًا.</h2>
       <p class="lead">اختار دورك. فيه ناس بترصد، وناس بتطعم، وناس بتوصّل. التطبيق يخليك تعمل واحدة أو الخمسة.</p>
     </div>
     <div class="grid g3 steps">
-      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_default_o1.png" alt=""><h3>حدّد المكان</h3><p class="muted">شفت كف محتاج مساعدة؟ حدّد مكانه على الخريطة في ثواني — صورة أو فيديو قصير، نوع الحيوان، ومحتاج إيه.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/nav_spot_a_paw_o1.png" alt=""><h3>حدّد المكان</h3><p class="muted">شفت كف محتاج مساعدة؟ حدّد مكانه على الخريطة في ثواني — صورة أو فيديو قصير، نوع الحيوان، ومحتاج إيه.</p></div>
       <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_medical_o1.png" alt=""><h3>قول الحالة</h3><p class="muted">قول للناس محتاجين أكل ولا مياه ولا علاج ولا مأوى — أو إنها أم وصغارها. الصفحة والخريطة بيتحدّثوا عند كل اللي حواليك.</p></div>
       <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/hover_rescued_o.png" alt=""><h3>أنقذ كفًا</h3><p class="muted">اضغط <em>ساعد هذا الكف</em>. اتعاونوا، وشاركوا التحديثات، وسجّلوا الإنقاذ — وتدخل في قصص النجاح، وكارما لكل واحد ساعد.</p></div>
-      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_food_o1.png" alt=""><h3>خطّط جولة إطعام</h3><p class="muted">اربط نقاط الإطعام بتاعتك في جولة الليلة. محطات مرقّمة، وأسهم على الخريطة، وتسجيل "أُطعم اليوم" عشان اللي بعدك يعرف.</p></div>
-      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_mother_pups_o1.png" alt=""><h3>سُق لإنقاذ</h3><p class="muted">عندك عربية؟ وصّل كف للدكتور أو للملجأ لما حد قريب يحتاج توصيلة. العيادات والملاجئ اللي جنبك موجودة على الخريطة أصلًا.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/act_route_o.png" alt=""><h3>خطّط جولة إطعام</h3><p class="muted">اربط نقاط الإطعام بتاعتك في جولة الليلة. محطات مرقّمة، وأسهم على الخريطة، وتسجيل "أُطعم اليوم" عشان اللي بعدك يعرف.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_driver_o.png" alt=""><h3>سُق</h3><p class="muted">عندك عربية؟ وصّل كفًا للطبيب البيطري أو الملجأ لما حد قريب يحتاج توصيلة. وبعدين نفس الطرق تشيل أكل: سواق بيعمل جولة إطعام، وفي يوم عربية بتطبخ وهي ماشية. الخريطة هي هي في الحالتين.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_vet_o.png" alt=""><h3>عالِج كفًا</h3><p class="muted">بنطلب من الأطباء البيطريين ينضموا ويقدّموا اللي يقدروا عليه — كشف، تعقيم، جرح يتعالج قبل ما يتلوّث. مجانًا لو ينفع، وبخصم لو مش ينفع. وجود طبيب على الخريطة هو الفرق بين بلاغ وشفاء.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_shelter_o.png" alt=""><h3>استقبل واحد</h3><p class="muted">الملاجئ أصعب حلقة في السلسلة، واللي الكل بيفترض إنها موجودة. بنطلب منها تنضم عشان المنقذ يشوف، قبل ما يشيل الحيوان، إذا كان في مكان يروح له ولا لأ.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_butcher_o.png" alt=""><h3>شارك القصاقيص</h3><p class="muted">الجزارين بيرموا عضم وقصاقيص كل يوم وحيوانات بتجوع في نفس الشارع. عايزين الجزارين المحليين يتسجلوا عشان الأكل يتقدّم بدل ما يترمي — ولما يبقى في فلوس، نشتري منهم لحمة كويسة مش بس ناخد الباقي.</p></div>
       <div class="card deep step reveal" style="display:flex;flex-direction:column;justify-content:center"><h3 style="color:var(--orange)">جاهز؟</h3><p class="muted">دقيقة تسجّل، ودقيقة ترصد أول كف ليك.</p><a class="btn btn-orange" href="#get" style="align-self:flex-start">حمّل التطبيق</a></div>
     </div>
   </div>
@@ -152,6 +180,7 @@
 
     <div class="grid g3">
       <div class="card reveal">
+        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_rescuer_o.png" alt="">
         <h3>ست أنواع من المساعدة</h3>
         <p class="muted">كل مجتمع ليه شارة، لأن انت مين بيغيّر انت تقدر تقدّم إيه.
           <strong>المنقذين</strong> بيروحوا يجيبوهم. <strong>المطعمين</strong> بيحافظوا
@@ -160,12 +189,14 @@
           و<strong>الجزارين</strong> — أحدث شارة — عندهم الحاجة اللي كل مطعم محتاجها.</p>
       </div>
       <div class="card reveal">
+        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/place_feedspots_o1.png" alt="">
         <h3>جنبك، أو في أي مكان</h3>
         <p class="muted">كل مجتمع بينتمي لبلد، فتقدر تشوف اللي في بلدك بس أو الكل مرة
           واحدة. مجموعة على مستوى شارع في الحتة بتاعتك بتشتغل بالظبط زي شبكة عيادات على
           مستوى البلد — الفرق بس هو هي لمين.</p>
       </div>
       <div class="card reveal">
+        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/act_route_o.png" alt="">
         <h3>توصل للكل مرة واحدة</h3>
         <p class="muted">اللي مأسس المجتمع يقدر يبعت رسالة توصل موبايل كل عضو. وده
           مقصود إنه ليه بس: مكبر صوت أي حد يقدر يمسكه هو مكبر صوت الكل هيكتمه. ده
@@ -189,7 +220,7 @@
       </div>
       <div class="reveal phone-wrap">
         <div class="phone"><div class="notch"></div><div class="screen">
-          <img class="on" src="assets/screens-ar/communities.png?v=3e153901" alt="المجتمعات في Spot a Paw">
+          <img class="on" src="assets/screens-ar/communities.png?v=23a3b14f" alt="المجتمعات في Spot a Paw">
         </div></div>
       </div>
     </div>
@@ -270,42 +301,30 @@
       <h2>ستة مظاهر. خريطة إنقاذ واحدة.</h2>
       <p class="lead">التطبيق اتولد في القاهرة، فبيلبس بردي ومناظر النيل بشكل افتراضي. اختار شكل منطقتك — أو اللي بيعجبك وخلاص — من <em>ملفك ← المظهر</em>. المناظر والأوراق والأيقونات بتتغيّر؛ أما الأزرار وبياناتك ولغتك فلأ.</p>
     </div>
-    <div class="skin-strip reveal">
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_eg.png?v=eec9ee8e" alt="صفحة كفوف وذيول بالمظهر المصري"></div></div><figcaption><b>مصري</b><span>لفائف بردي ومناظر النيل</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_standard.png?v=8b4626cd" alt="صفحة كفوف وذيول بالمظهر العادي"></div></div><figcaption><b>عادي</b><span>بسيط ومريح للعين</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_south-asia.png?v=4dd13e4c" alt="صفحة كفوف وذيول بمظهر جنوب آسيا"></div></div><figcaption><b>جنوب آسيا</b><span>ورق ألياف وأنهار وحقول أرز</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_southeast-asia.png?v=05f75eb7" alt="صفحة كفوف وذيول بمظهر جنوب شرق آسيا"></div></div><figcaption><b>جنوب شرق آسيا</b><span>ورق التوت وخيزران ومدرّجات</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_west-asia.png?v=e0d4e862" alt="صفحة كفوف وذيول بمظهر غرب آسيا"></div></div><figcaption><b>غرب آسيا</b><span>رقّ ونخيل وأفنية حجرية</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_south-america.png?v=c985436d" alt="صفحة كفوف وذيول بمظهر أمريكا الجنوبية"></div></div><figcaption><b>أمريكا الجنوبية</b><span>ورق منسوج وأنهار ومرتفعات</span></figcaption></figure>
+        <div class="skin-rotator reveal">
+      <div class="phone"><div class="notch"></div><div class="screen">
+        <img class="skin-slide on" src="assets/screens/skin_feed_eg.png?v=eec9ee8e" alt="صفحة كفوف وذيول بالمظهر المصري" data-name="مصري" data-blurb="لفائف بردي ومناظر النيل">
+        <img class="skin-slide" src="assets/screens/skin_feed_standard.png?v=8b4626cd" alt="صفحة كفوف وذيول بالمظهر العادي" data-name="عادي" data-blurb="بسيط ومريح للعين">
+        <img class="skin-slide" src="assets/screens/skin_feed_south-asia.png?v=4dd13e4c" alt="صفحة كفوف وذيول بمظهر جنوب آسيا" data-name="جنوب آسيا" data-blurb="ورق ألياف وأنهار وحقول أرز">
+        <img class="skin-slide" src="assets/screens/skin_feed_southeast-asia.png?v=05f75eb7" alt="صفحة كفوف وذيول بمظهر جنوب شرق آسيا" data-name="جنوب شرق آسيا" data-blurb="ورق التوت وخيزران ومدرّجات">
+        <img class="skin-slide" src="assets/screens/skin_feed_west-asia.png?v=e0d4e862" alt="صفحة كفوف وذيول بمظهر غرب آسيا" data-name="غرب آسيا" data-blurb="رقّ ونخيل وأفنية حجرية">
+        <img class="skin-slide" src="assets/screens/skin_feed_south-america.png?v=c985436d" alt="صفحة كفوف وذيول بمظهر أمريكا الجنوبية" data-name="أمريكا الجنوبية" data-blurb="ورق منسوج وأنهار ومرتفعات">
+      </div></div>
+      <figcaption class="skin-cap"><b>مصري</b><span>لفائف بردي ومناظر النيل</span></figcaption>
+      <div class="skin-dots">
+      <button class="skin-dot on" type="button" data-i="0" aria-label="مصري"></button>
+      <button class="skin-dot" type="button" data-i="1" aria-label="عادي"></button>
+      <button class="skin-dot" type="button" data-i="2" aria-label="جنوب آسيا"></button>
+      <button class="skin-dot" type="button" data-i="3" aria-label="جنوب شرق آسيا"></button>
+      <button class="skin-dot" type="button" data-i="4" aria-label="غرب آسيا"></button>
+      <button class="skin-dot" type="button" data-i="5" aria-label="أمريكا الجنوبية"></button>
+      </div>
     </div>
     <p class="muted skin-note">مظاهر جديدة بتوصل من غير تحديث للتطبيق — الرسومات مجلد لكل منطقة. <a href="help-ar.html#skins">إزاي المظهر بيشتغل ←</a></p>
   </div>
 </section>
 
-<section id="mothership" class="nile-bg" style="background:var(--deep)">
-  <div class="wrap ship">
-    <div class="reveal">
-      <span class="eyebrow">السفينة الأم</span>
-      <h2>Spot a Paw هو أول حاجة اتعملت من One Tail One Meal.</h2>
-      <blockquote>"لأن كل ذيل يستاهل وجبة."</blockquote>
-      <p class="lead">One Tail One Meal فكرة، مش مؤسسة — شخص واحد مش قادر يبطّل تفكير في كلاب وقطط الشارع في مصر. الفكرة: عربات طعام بيسوقها ناس من البلد، بتجمع اللحمة الفاضلة من الجزارين، وبتطبخها بأمان جوه العربية، وبتقدّمها دافية في أطباق تتاكل معمولة من الخضار. لا هدر، لا تلوث، لا بطون فاضية.</p>
-      <p class="lead"><strong>لسه مفيش حاجة من ده موجودة</strong> — لا عربية، لا فريق، ولا دخل. التطبيق ده هو النسخة الرخيصة منها: نعرف الاحتياج فين فعلاً، بتمن فاتورة موبايل، قبل ما حد يشتري عربية ويخمّن.</p>
-      <p class="lead">القاهرة الأول. وبعدين إسكندرية والجيزة، وأي مكان فيه ذيل جعان. وSpot a Paw هو اللي بيخلي العربات — وكل حد مهتم — يعرفوا الذيول فين.</p>
-      <div style="margin:1rem 0 1.4rem"><span class="pill">القاهرة</span><span class="pill">سيدني</span><span class="pill">عربات طعام</span><span class="pill">أطباق تتاكل</span><span class="pill">متطوعين</span></div>
-      <a class="btn btn-orange" href="https://onetailonemeal.com" target="_blank" rel="noopener">زور One Tail One Meal ←</a>
-    </div>
-    <div class="reveal">
-      <!-- The One Tail One Meal mark with the spinning globe — same geometry as the app's SpinningGlobeMark (plate over a rotating map). -->
-      <div class="globe-mark" role="img" aria-label="One Tail One Meal">
-        <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
-        <div class="globe-shadow"></div>
-        <div class="globe"><canvas id="globe3d"></canvas></div>
-        <!-- Same plate again, clipped to its front rim, so the rings pass IN FRONT of the sphere's base: it sits in the well. -->
-        <img class="plate-front" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section id="get" class="papyrus">
   <div class="wrap grid g2" style="align-items:center">
@@ -346,14 +365,14 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=0e8f7d39"></script>
+<script src="assets/site.js?v=381eac63"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 // Real 3D globe inside the One Tail One Meal plate: a lit sphere with the
 // brand-coloured equirectangular map, slow rotation, soft rim. Falls back to
 // the CSS map scroll if WebGL is unavailable.
-(function () {
-  var canvas = document.getElementById('globe3d');
+Array.prototype.forEach.call(
+  document.querySelectorAll('#globe3d, canvas.globe3d'), function (canvas) {
   if (!canvas || !window.THREE) return;
   var holder = canvas.parentElement;
   var renderer;
@@ -404,7 +423,7 @@
     renderer.render(scene, camera);
   }
   requestAnimationFrame(frame);
-})();
+});
 </script>
 </body>
 </html>

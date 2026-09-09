@@ -20,7 +20,7 @@
 <link rel="icon" href="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/app_icon_spot_a_paw.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=3304fa7b">
+<link rel="stylesheet" href="assets/site.css?v=f337a010">
 </head>
 <body>
 
@@ -53,7 +53,7 @@
       </div>
       <p class="hero-note">iPhone via TestFlight today · Android and App Store next · free, forever.</p>
       <div class="hero-stats">
-        <div class="stat"><b>5</b><span>ways to help</span></div>
+        <div class="stat"><b>8</b><span>ways to help</span></div>
         <div class="stat"><b>2</b><span>cities &amp; counting</span></div>
         <div class="stat"><b>0</b><span>ads, ever</span></div>
       </div>
@@ -63,7 +63,7 @@
         <div class="notch"></div>
         <div class="screen">
           <img src="assets/screens/paws_and_tails.png?v=08899845" alt="Paws & Tails feed" class="on">
-          <img src="assets/screens/map.png?v=32bf8ca6" alt="Rescue map">
+          <img src="assets/screens/map.png?v=378cad84" alt="Rescue map">
           <img src="assets/screens/spot_a_paw.png?v=38cc3e89" alt="Spot a Paw form">
           <img src="assets/screens/success_stories.png?v=6b40cc9e" alt="Success stories">
         </div>
@@ -84,12 +84,13 @@
     </div>
     <div class="grid g2">
       <div class="card nile reveal">
-        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_rescue_o1.png" alt="">
+        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png" alt="">
         <h3>Our mission</h3>
         <p class="muted">Get every stray the help it needs — food, water, medical care, a rescue, a home — by connecting the people who spot them with the people who can act. No call centre, no waiting list. A pin on a map and a neighbour who cares.</p>
       </div>
       <div class="card deep reveal">
-        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_map_v1.png" alt="">
+        <!-- The live globe, not a picture of one: the vision card is the one place on the page where "anywhere there is a stray and a phone" is the whole point. -->
+        <div class="globe icon-globe"><canvas class="globe3d"></canvas></div>
         <h3>Our vision</h3>
         <p class="muted">A world where no paw goes unseen. Every neighbourhood with its own rescuers, feeders and drivers; every feeding spot on a route; every rescue a story someone can celebrate. Starting in Cairo and Sydney — built to work anywhere there's a stray and a phone.</p>
       </div>
@@ -103,19 +104,47 @@
   </div>
 </section>
 
+<section id="mothership" class="nile-bg" style="background:var(--deep)">
+  <div class="wrap ship">
+    <div class="reveal">
+      <span class="eyebrow">The mothership</span>
+      <h2>Spot a Paw is the first thing One Tail One Meal has built.</h2>
+      <blockquote>"Because every tail deserves a meal."</blockquote>
+      <p class="lead">One Tail One Meal is an idea, not an organisation — one person who couldn't stop thinking about the forgotten dogs and cats of Egypt. The idea is food trucks driven by local heroes: collect the leftover meat butchers throw out, cook it safely on board, and serve it warm on edible plates made from vegetables. No waste, no pollution, no empty bellies.</p>
+      <p class="lead"><strong>None of that exists yet</strong> — no van, no team, no income. This app is the cheap version of it: find out where the need actually is, for the price of a phone bill, before anyone buys a vehicle to guess with.</p>
+      <p class="lead">Cairo first. Then Alexandria, Giza, and anywhere a tail is hungry. Spot a Paw is how the trucks — if they are ever built — will know where the tails are.</p>
+      <div style="margin:1rem 0 1.4rem"><span class="pill">Cairo</span><span class="pill">Sydney</span><span class="pill">Food trucks &mdash; one day</span><span class="pill">Edible plates</span><span class="pill">Volunteers</span></div>
+      <a class="btn btn-orange" href="https://onetailonemeal.com" target="_blank" rel="noopener">Visit One Tail One Meal →</a>
+    </div>
+    <div class="reveal">
+      <!-- The One Tail One Meal mark with the spinning globe — same geometry as the app's SpinningGlobeMark (plate over a rotating map). -->
+      <div class="globe-mark" role="img" aria-label="One Tail One Meal">
+        <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
+        <div class="globe-shadow"></div>
+        <div class="globe"><canvas id="globe3d"></canvas></div>
+        <!-- Same plate again, clipped to its front rim, so the rings pass IN FRONT of the sphere's base: it sits in the well. -->
+        <img class="plate-front" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="how" class="nile-bg">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">How it works</span>
-      <h2>Five things you can do the moment you see a paw.</h2>
-      <p class="lead">Pick your role. Some people spot, some feed, some drive. Spot a Paw lets you do one, or all five.</p>
+      <h2>Eight ways to help, starting the moment you see a paw.</h2>
+      <p class="lead">Pick your role. Some people spot, some feed, some drive. Spot a Paw lets you do one, or all of them.</p>
     </div>
     <div class="grid g3 steps">
-      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_default_o1.png" alt=""><h3>Drop a pin</h3><p class="muted">Spot a paw in need? Mark their location on the map in seconds — a photo or a short video, what kind of animal, what they need.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/nav_spot_a_paw_o1.png" alt=""><h3>Drop a pin</h3><p class="muted">Spot a paw in need? Mark their location on the map in seconds — a photo or a short video, what kind of animal, what they need.</p></div>
       <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_medical_o1.png" alt=""><h3>Report status</h3><p class="muted">Tell others whether they need food, water, medical help, shelter — or that it's a mum with pups. The feed and the map update for everyone nearby.</p></div>
       <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/hover_rescued_o.png" alt=""><h3>Save a paw</h3><p class="muted">Tap <em>Help this Paw</em>. Team up, share updates, mark it rescued — and it joins the Success Stories, with karma to everyone who helped.</p></div>
-      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_food_o1.png" alt=""><h3>Plan a feeding route</h3><p class="muted">Chain your feeding spots into tonight's round. Numbered stops, arrows on the map, "Fed today" check-ins so the next feeder knows.</p></div>
-      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/paw_mother_pups_o1.png" alt=""><h3>Drive for a rescue</h3><p class="muted">Got wheels? Carry a paw to the vet or a shelter when someone nearby needs a lift. Vets and shelters near you are already on the map.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/act_route_o.png" alt=""><h3>Plan a feeding route</h3><p class="muted">Chain your feeding spots into tonight's round. Numbered stops, arrows on the map, "Fed today" check-ins so the next feeder knows.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_driver_o.png" alt=""><h3>Drive</h3><p class="muted">Got wheels? Carry a paw to the vet or a shelter when someone nearby needs a lift. Later, the same routes carry food: a driver running a feeding round, and one day a truck cooking on board. The map is the same either way.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_vet_o.png" alt=""><h3>Treat a paw</h3><p class="muted">We are asking vets to join and offer what they can &mdash; a consultation, a sterilisation, a wound seen to before it turns septic. Pro bono where it is possible, discounted where it is not. A vet on the map is the difference between a report and a recovery.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_shelter_o.png" alt=""><h3>Take one in</h3><p class="muted">Shelters are the hardest link in the chain and the one everybody assumes exists. We are asking them to join so a rescuer can see, before they pick an animal up, whether there is anywhere for it to go.</p></div>
+      <div class="card deep step reveal"><img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_butcher_o.png" alt=""><h3>Share the offcuts</h3><p class="muted">Butchers bin bone and trim every day while animals go hungry on the same street. We want local butchers registered so that food is offered instead of thrown out &mdash; and, once there is money behind it, so we can buy proper cuts from them rather than only taking what is left.</p></div>
       <div class="card deep step reveal" style="display:flex;flex-direction:column;justify-content:center"><h3 style="color:var(--orange)">Ready?</h3><p class="muted">It takes a minute to sign up and a minute to spot your first paw.</p><a class="btn btn-orange" href="#get" style="align-self:flex-start">Get the app</a></div>
     </div>
   </div>
@@ -137,6 +166,7 @@
 
     <div class="grid g3">
       <div class="card reveal">
+        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/role_rescuer_o.png" alt="">
         <h3>Six kinds of help</h3>
         <p class="muted">A community carries a badge, because who you are changes what
           you can offer. <strong>Rescuers</strong> go and get them.
@@ -147,6 +177,7 @@
           feeder needs.</p>
       </div>
       <div class="card reveal">
+        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/place_feedspots_o1.png" alt="">
         <h3>Near you, or anywhere</h3>
         <p class="muted">Every community belongs to a country, so you can look at just
           the ones where you live or at all of them at once. A street-level group for
@@ -154,6 +185,7 @@
           clinics &mdash; the difference is only who it is for.</p>
       </div>
       <div class="card reveal">
+        <img class="icon" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/act_route_o.png" alt="">
         <h3>Reaching everyone at once</h3>
         <p class="muted">The person who runs a community can send a message to every
           member's phone. Deliberately only them: a loudspeaker anyone can pick up is a
@@ -179,7 +211,7 @@
       </div>
       <div class="reveal phone-wrap">
         <div class="phone"><div class="notch"></div><div class="screen">
-          <img class="on" src="assets/screens/communities.png?v=8da7accc" alt="Communities in Spot a Paw">
+          <img class="on" src="assets/screens/communities.png?v=02f2a181" alt="Communities in Spot a Paw">
         </div></div>
       </div>
     </div>
@@ -218,7 +250,7 @@
         <p class="muted">Spotted paws, feeding spots, tonight's routes with numbered stops and arrows, and the vets and shelters within your search radius. Every pin opens straight into the report.</p>
         <ul><li>Colour-coded routes when you run more than one</li><li>Vets &amp; Shelters nearby, re-searched as you move</li><li>Filter by urgency</li></ul>
       </div>
-      <div class="phone-wrap"><div class="phone"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/map.png?v=32bf8ca6" alt="Rescue map"></div></div></div>
+      <div class="phone-wrap"><div class="phone"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/map.png?v=378cad84" alt="Rescue map"></div></div></div>
     </div>
 
     <div class="feature reveal">
@@ -260,42 +292,30 @@
       <h2>Six looks. One rescue map.</h2>
       <p class="lead">Spot a Paw was born in Cairo, so it wears papyrus and Nile scenes by default. Pick the look of your region — or simply the one you like — in <em>Profile → Look &amp; feel</em>. Scenery, papers and icons change; the buttons, your data and your language never do.</p>
     </div>
-    <div class="skin-strip reveal">
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_eg.png?v=eec9ee8e" alt="Paws &amp; Tails feed, Egyptian skin"></div></div><figcaption><b>Egyptian</b><span>Papyrus scrolls, Nile scenes</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_standard.png?v=8b4626cd" alt="Paws &amp; Tails feed, Standard skin"></div></div><figcaption><b>Standard</b><span>Flat and plain, easy on the eyes</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_south-asia.png?v=4dd13e4c" alt="Paws &amp; Tails feed, South Asia skin"></div></div><figcaption><b>South Asia</b><span>Fibre paper, rivers and rice fields</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_southeast-asia.png?v=05f75eb7" alt="Paws &amp; Tails feed, Southeast Asia skin"></div></div><figcaption><b>Southeast Asia</b><span>Mulberry paper, bamboo and terraces</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_west-asia.png?v=e0d4e862" alt="Paws &amp; Tails feed, West Asia skin"></div></div><figcaption><b>West Asia</b><span>Parchment, palms and stone courtyards</span></figcaption></figure>
-      <figure><div class="phone mini"><div class="notch"></div><div class="screen"><img class="on" src="assets/screens/skin_feed_south-america.png?v=c985436d" alt="Paws &amp; Tails feed, South America skin"></div></div><figcaption><b>South America</b><span>Woven paper, rivers and highlands</span></figcaption></figure>
+        <div class="skin-rotator reveal">
+      <div class="phone"><div class="notch"></div><div class="screen">
+        <img class="skin-slide on" src="assets/screens/skin_feed_eg.png?v=eec9ee8e" alt="Paws &amp; Tails feed, Egyptian skin" data-name="Egyptian" data-blurb="Papyrus scrolls, Nile scenes">
+        <img class="skin-slide" src="assets/screens/skin_feed_standard.png?v=8b4626cd" alt="Paws &amp; Tails feed, Standard skin" data-name="Standard" data-blurb="Flat and plain, easy on the eyes">
+        <img class="skin-slide" src="assets/screens/skin_feed_south-asia.png?v=4dd13e4c" alt="Paws &amp; Tails feed, South Asia skin" data-name="South Asia" data-blurb="Fibre paper, rivers and rice fields">
+        <img class="skin-slide" src="assets/screens/skin_feed_southeast-asia.png?v=05f75eb7" alt="Paws &amp; Tails feed, Southeast Asia skin" data-name="Southeast Asia" data-blurb="Mulberry paper, bamboo and terraces">
+        <img class="skin-slide" src="assets/screens/skin_feed_west-asia.png?v=e0d4e862" alt="Paws &amp; Tails feed, West Asia skin" data-name="West Asia" data-blurb="Parchment, palms and stone courtyards">
+        <img class="skin-slide" src="assets/screens/skin_feed_south-america.png?v=c985436d" alt="Paws &amp; Tails feed, South America skin" data-name="South America" data-blurb="Woven paper, rivers and highlands">
+      </div></div>
+      <figcaption class="skin-cap"><b>Egyptian</b><span>Papyrus scrolls, Nile scenes</span></figcaption>
+      <div class="skin-dots">
+      <button class="skin-dot on" type="button" data-i="0" aria-label="Egyptian"></button>
+      <button class="skin-dot" type="button" data-i="1" aria-label="Standard"></button>
+      <button class="skin-dot" type="button" data-i="2" aria-label="South Asia"></button>
+      <button class="skin-dot" type="button" data-i="3" aria-label="Southeast Asia"></button>
+      <button class="skin-dot" type="button" data-i="4" aria-label="West Asia"></button>
+      <button class="skin-dot" type="button" data-i="5" aria-label="South America"></button>
+      </div>
     </div>
     <p class="muted skin-note">More looks arrive without an app update — the artwork is a folder per region. <a href="help.html#skins">How Look &amp; feel works →</a></p>
   </div>
 </section>
 
-<section id="mothership" class="nile-bg" style="background:var(--deep)">
-  <div class="wrap ship">
-    <div class="reveal">
-      <span class="eyebrow">The mothership</span>
-      <h2>Spot a Paw is the first thing One Tail One Meal has built.</h2>
-      <blockquote>"Because every tail deserves a meal."</blockquote>
-      <p class="lead">One Tail One Meal is an idea, not an organisation — one person who couldn't stop thinking about the forgotten dogs and cats of Egypt. The idea is food trucks driven by local heroes: collect the leftover meat butchers throw out, cook it safely on board, and serve it warm on edible plates made from vegetables. No waste, no pollution, no empty bellies.</p>
-      <p class="lead"><strong>None of that exists yet</strong> — no van, no team, no income. This app is the cheap version of it: find out where the need actually is, for the price of a phone bill, before anyone buys a vehicle to guess with.</p>
-      <p class="lead">Cairo first. Then Alexandria, Giza, and anywhere a tail is hungry. Spot a Paw is how the trucks — if they are ever built — will know where the tails are.</p>
-      <div style="margin:1rem 0 1.4rem"><span class="pill">Cairo</span><span class="pill">Sydney</span><span class="pill">Food trucks &mdash; one day</span><span class="pill">Edible plates</span><span class="pill">Volunteers</span></div>
-      <a class="btn btn-orange" href="https://onetailonemeal.com" target="_blank" rel="noopener">Visit One Tail One Meal →</a>
-    </div>
-    <div class="reveal">
-      <!-- The One Tail One Meal mark with the spinning globe — same geometry as the app's SpinningGlobeMark (plate over a rotating map). -->
-      <div class="globe-mark" role="img" aria-label="One Tail One Meal">
-        <img src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
-        <div class="globe-shadow"></div>
-        <div class="globe"><canvas id="globe3d"></canvas></div>
-        <!-- Same plate again, clipped to its front rim, so the rings pass IN FRONT of the sphere's base: it sits in the well. -->
-        <img class="plate-front" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/globe_plate_v1.png?v=5" alt="">
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section id="get" class="papyrus">
   <div class="wrap grid g2" style="align-items:center">
@@ -336,14 +356,16 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=0e8f7d39"></script>
+<script src="assets/site.js?v=381eac63"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 // Real 3D globe inside the One Tail One Meal plate: a lit sphere with the
 // brand-coloured equirectangular map, slow rotation, soft rim. Falls back to
 // the CSS map scroll if WebGL is unavailable.
-(function () {
-  var canvas = document.getElementById('globe3d');
+// One instance per canvas. This began as getElementById('globe3d') and so
+// could only ever render one globe; the vision card needs a second.
+Array.prototype.forEach.call(
+  document.querySelectorAll('#globe3d, canvas.globe3d'), function (canvas) {
   if (!canvas || !window.THREE) return;
   var holder = canvas.parentElement;
   var renderer;
@@ -394,7 +416,7 @@
     renderer.render(scene, camera);
   }
   requestAnimationFrame(frame);
-})();
+});
 </script>
 </body>
 </html>
