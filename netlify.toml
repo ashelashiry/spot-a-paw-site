@@ -32,3 +32,8 @@
   for = "/.well-known/assetlinks.json"
   [headers.values]
     Content-Type = "application/json"
+
+[[redirects]]
+  from = "/confirmed"
+  to = "/confirmed/index.html"
+  status = 200
