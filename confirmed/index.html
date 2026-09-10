@@ -28,8 +28,10 @@
 <div class="card" id="card">
   <img class="mark" alt="" src="https://qyyydmjrrtyauyawheos.supabase.co/storage/v1/object/public/report-media/ea87c808-aa49-4286-829b-e69250be5b84/icons/app_icon_spot_a_paw.png">
   <h1 id="h">Your email is confirmed</h1>
-  <p id="p1">Go back to the Spot a Paw app and sign in with the email and password you chose.</p>
-  <a class="btn" id="btn" href="spotapaw://spotapaw.com/signin">Open Spot a Paw</a>
+  <!-- No "open the app" button: a deep link relaunches the app and wipes the
+       email and password the reader had already typed. The app is still open
+       behind their mail client; switching back keeps everything. -->
+  <p id="p1">Now switch back to the Spot a Paw app — your email and password are still filled in — and tap <b>Sign In</b>.</p>
   <p class="muted" id="p2">Don't have the app on this phone? <a href="https://spot-a-paw.com/#get">Get it here</a>.</p>
 </div>
 <script>
@@ -40,8 +42,7 @@
   if (!ar) return;
   document.documentElement.lang = 'ar'; document.documentElement.dir = 'rtl';
   document.getElementById('h').textContent = 'تم تأكيد بريدك';
-  document.getElementById('p1').textContent = 'ارجع لتطبيق Spot a Paw وسجّل دخولك بالإيميل وكلمة السر اللي اخترتهم.';
-  document.getElementById('btn').textContent = 'افتح Spot a Paw';
+  document.getElementById('p1').innerHTML = 'ارجع لتطبيق Spot a Paw — الإيميل وكلمة السر لسه مكتوبين — واضغط <b>تسجيل الدخول</b>.';
   document.getElementById('p2').innerHTML = 'التطبيق مش على الموبايل ده؟ <a href="https://spot-a-paw.com/index-ar.html#get">حمّله من هنا</a>.';
 })();
 </script>
